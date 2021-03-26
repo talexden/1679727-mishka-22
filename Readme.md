@@ -1,7 +1,7 @@
 # Личный проект «Мишка» 
 
 * Студент: [Aleksey Titov](https://up.htmlacademy.ru/adaptive/22/user/1679727).
-* Наставник: [Андрей Ефимов](https://up.htmlacademy.ru/htmlcss/30/user/367335).
+* Наставник: [Андрей Ефимов](https://up.htmlacademy.ru/adaptive/22/user/367335).
 
 ---
 
