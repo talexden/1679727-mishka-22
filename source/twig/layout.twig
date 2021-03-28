@@ -1,0 +1,26 @@
+{% from 'macro.twig' import symbol %}
+
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: {{ title }}</title>
+
+  </head>
+  <body class="page__body">
+
+    {% include 'partials/header.twig' %}
+
+    <main>
+      {% block pageMain %}
+        <h1>Страница в разработке</h1>
+      {% endblock %}
+    </main>
+
+    {% include 'partials/footer.twig' %}
+
+    {% block modal %}
+    {% endblock %}
+
+  </body>
+</html>

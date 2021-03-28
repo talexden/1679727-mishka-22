@@ -1,0 +1,13 @@
+{% extends '../layout.twig' %}
+
+{% set title = 'Мишка' %}
+
+{% block pageMain %}
+  {% include '../partials//index/main-header.twig' %}
+  {% include '../partials//index/advantages.twig' %}
+  {% include '../partials/index/slider.twig' %}
+{% endblock %}
+
+{% block modal %}
+  {% include '../partials/index/modal.twig' %}
+{% endblock %}
