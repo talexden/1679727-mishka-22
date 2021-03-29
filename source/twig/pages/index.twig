@@ -1,13 +1,12 @@
 {% extends '../layout.twig' %}
 
-{% set title = 'Мишка' %}
+{% set title = 'главная страница' %}
 
 {% block pageMain %}
-  {% include '../partials//index/main-header.twig' %}
-  {% include '../partials//index/advantages.twig' %}
-  {% include '../partials/index/slider.twig' %}
-{% endblock %}
-
-{% block modal %}
-  {% include '../partials/index/modal.twig' %}
+  {% include '../partials/main-header.twig' %}
+  {% include '../partials/promotion.twig' %}
+  {% include '../partials/popup.twig' %}
+  {% include '../partials/iconable-list.twig' %}
+  {% include '../partials/reviews.twig' %}
+  {% include '../partials/contacts.twig' %}
 {% endblock %}
