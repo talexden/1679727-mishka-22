@@ -1,0 +1,41 @@
+<header class="header">
+  <nav class="navigation">
+    <a class="navigation__logo" {{ page != 'index' ? 'href="index.html"' }}>
+      <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+    </a>
+    <button class="navigation__toggle" type="button">
+      <span class="visually-hidden">Открыть меню</span>
+    </button>
+    <div class="navigation__wrapper">
+      <ul class="navigation-prymary">
+        <li class="navigation-prymary__item">
+          <a class="navigation-prymary__link" href="catalog.html">Каталог товаров</a>
+        </li>
+        <li class="navigation-prymary__item">
+          <a class="navigation-prymary__link" href="form.html">Вязание на заказ</a>
+        </li>
+        <li class="navigation-prymary__item navigation-prymary__item--search">
+          <a class="navigation-prymary__link" href="blank.html">
+            {{ symbol('search', 29, 29, 'navigation__icon') }}
+            <span class="navigation-prymary__text">Поиск по сайту</span>
+          </a>
+        </li>
+        <li class="navigation-prymary__item navigation-prymary__item--basket">
+          <a class="navigation-prymary__link" href="blank.html">
+            {{ symbol('basket', 29, 29, 'navigation__icon') }}
+            <span class="navigation-prymary__text">Корзина: пока пуста</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navigation-secondary">
+        <li class="navigation-secondary__item">
+          <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
+        </li>
+        <li class="navigation-secondary__item">
+          <a class="navigation-secondary__link" href="blank.html">Распродажа</a>
+        </li>
+      </ul>
+      <p class="navigation__text">Бесплатная доставка по России</p>
+    </div>
+  </nav>
+</header>
