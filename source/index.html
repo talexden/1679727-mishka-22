@@ -2,7 +2,7 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Мишка - главная страница</title>
+    <title>Мишка: Главная страница</title>
   </head>
   <body class="page__body">
     <header class="header">
@@ -14,27 +14,27 @@
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="navigation__wrapper">
-          <ul class="navigation-prymary">
-            <li class="navigation-prymary__item">
-              <a class="navigation-prymary__link" href="catalog.html">Каталог товаров</a>
+          <ul class="navigation-primary">
+            <li class="navigation-primary__item">
+              <a class="navigation-primary__link" href="catalog.html">Каталог товаров</a>
             </li>
-            <li class="navigation-prymary__item">
-              <a class="navigation-prymary__link" href="form.html">Вязание на заказ</a>
+            <li class="navigation-primary__item">
+              <a class="navigation-primary__link" href="form.html">Вязание на заказ</a>
             </li>
-            <li class="navigation-prymary__item navigation-prymary__item--search">
-              <a class="navigation-prymary__link" href="blank.html">
-                <svg class="symbol navigation__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+            <li class="navigation-primary__item">
+              <a class="navigation-primary__link" href="blank.html">
+                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#search" />
                 </svg>
-                <span class="navigation-prymary__text">Поиск по сайту</span>
+                <span class="navigation-primary__text">Поиск по сайту</span>
               </a>
             </li>
-            <li class="navigation-prymary__item navigation-prymary__item--basket">
-              <a class="navigation-prymary__link" href="blank.html">
-                <svg class="symbol navigation__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+            <li class="navigation-primary__item">
+              <a class="navigation-primary__link" href="blank.html">
+                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#basket" />
                 </svg>
-                <span class="navigation-prymary__text">Корзина: пока пуста</span>
+                <span class="navigation-primary__text">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
@@ -59,7 +59,7 @@
             <a class="main-header__link" href="#!">Предметы<br>интерьера</a>
           </li>
           <li class="main-header__item">
-            <a class="main-header__lin" href="#!">Детские<br>игрушки</a>
+            <a class="main-header__link" href="#!">Детские<br>игрушки</a>
           </li>
         </ul>
       </header>
@@ -83,30 +83,27 @@
         </table>
         <img class="promotion__image" src="/img/triple-set-mobile.jpg" alt="Три вязаные корзинки разного цвета и размера">
         <p class="promotion__cost">Цена: 990 руб.</p>
-        <button class="button promotion_button" aria-label="Вязаные корзинки, заказать">Заказать</button>
+        <button class="button promotion_button" type="button" aria-label="Вязаные корзинки, заказать">Заказать</button>
       </section>
-      <section class="popup">
-        <h2 class="heading popup__lead">Добавить в корзину</h2>
+      <section class="popup-order">
+        <h2 class="heading popup-order__lead">Добавить в корзину</h2>
         <form class="form" action="https://echo.htmlacademy.ru/" method="get">
-          <fieldset class="fieldset">
-            <legend class="fieldset__legend">Выберите размер:</legend>
-            <label class="fieldset__label">
-              <span class="visually-hidden">Размер - маленький</span>
-              <input class="visually-hidden form__radio" type="radio" name="size" checked>
-              <span class="fieldset__radio-box"></span>
+          <fieldset class="form__fieldset">
+            <legend class="form__fieldset-legend">Выберите размер:</legend>
+            <label class="form__label">
+              S
+              <input class="visually-hidden form__radio" type="radio" name="size" checked="checked">
             </label>
             <label class="form__label">
-              <span class="visually-hidden">Размер - средний</span>
+              M
               <input class="visually-hidden form__radio" type="radio" name="size">
-              <span class="form__radio-box"></span>
             </label>
             <label class="form__label">
-              <span class="visually-hidden">Размер - большой</span>
+              L
               <input class="visually-hidden form__radio" type="radio" name="size">
-              <span class="form__radio-box"></span>
             </label>
           </fieldset>
-          <button class="form__submit" aria-label="Добавить в корзину">Добавить</button>
+          <button class="button form__submit form__submit--popup-order" type="submit" aria-label="Добавить в корзину">Добавить</button>
         </form>
       </section>
       <section class="iconable-list">
@@ -114,32 +111,26 @@
         <ul class="iconable-list__list">
           <li class="iconable-list__item iconable-list__item--flower">
             Экологически
-            <br>
             чистые материалы
           </li>
           <li class="iconable-list__item iconable-list__item--money">
             Скандинавский стиль
-            <br>
             по российской цене
-          </li>
-          <li class="iconable-list__item iconable-list__item--heart">
-            Экологически
-            <br>
-            чистые материалы
           </li>
           <li class="iconable-list__item iconable-list__item--wool">
             Увеличивает лайки
-            <br>
             на фотографиях
+          </li>
+          <li class="iconable-list__item iconable-list__item--heart">
+            Связано вручную
+            с&nbsp;любовью и умилением
           </li>
           <li class="iconable-list__item iconable-list__item--rocket">
             Поддержка отечественного
-            <br>
             производителя
           </li>
           <li class="iconable-list__item iconable-list__item--present">
             Поставляется
-            <br>
             в подарочной упаковке
           </li>
         </ul>
@@ -170,7 +161,7 @@
         <table class="table contacts__table">
           <tr class="table__row">
             <td class="table__data">e-mail:</td>
-            <td>
+            <td class="table__data">
               <a class="contacts__link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
             </td>
           </tr>
