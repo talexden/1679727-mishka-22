@@ -6,7 +6,7 @@
       <li class="form__item">
         <label class="form__label">
           Аксессуар для интерьера
-          <input class="form__check form__check--radio" type="radio" name="type" checked="checked">
+          <input class="form__check form__check--radio" type="radio" name="type" checked>
         </label>
       </li>
       <li class="form__item">
@@ -23,13 +23,13 @@
       <li class="form__item">
         <label class="form__label">
           Белый
-          <input class="form__check form__check--checkbox" type="checkbox" name="white" checked="checked">
+          <input class="form__check form__check--checkbox" type="checkbox" name="white" checked>
         </label>
       </li>
       <li class="form__item">
         <label class="form__label">
           Серый
-          <input class="form__check form__check--checkbox" type="checkbox" name="gray" checked="checked">
+          <input class="form__check form__check--checkbox" type="checkbox" name="gray" checked>
         </label>
       </li>
       <li class="form__item">
@@ -62,11 +62,11 @@
     <legend class="form__set-name">ФИО</legend>
     <label class="form__label">
       Имя:
-      <input class="form__input" type="text" name="name" placeholder="Введите ваше имя*" required="required">
+      <input class="form__input" type="text" name="name" placeholder="Введите ваше имя*" required>
     </label>
     <label class="form__label">
       Фамилия:
-      <input class="form__input" type="text" name="surname" placeholder="Укажите фамилию*" required="required">
+      <input class="form__input" type="text" name="surname" placeholder="Укажите фамилию*" required>
     </label>
     <label class="form__label">
       Отчество:
@@ -76,19 +76,19 @@
   <fieldset class="form__set">
     <legend class="form__set-name">Тел</legend>
     <label class="form__label">
-      <input class="form__input" type="tel" name="tel" pattern="[\+][7]\s\d{3}\s\d{3}\s\d{2}\s\d{2}"placeholder="+7 ХХХ ХХХ ХХ ХХ*" required="required">
+      <input class="form__input" type="tel" name="tel" pattern="[\+][7]\s\d{3}\s\d{3}\s\d{2}\s\d{2}"placeholder="+7 ХХХ ХХХ ХХ ХХ*" required>
     </label>
   </fieldset>
   <fieldset class="form__set">
     <legend class="form__set-name">E-mail</legend>
     <label class="form__label">
-    <input class="form__input" type="email" name="email" placeholder="Ваш Email*" required="required">
+    <input class="form__input" type="email" name="email" placeholder="Ваш Email*" required>
     </label>
   </fieldset>
   <fieldset class="form__set">
     <legend class="form__set-name">Доп</legend>
-    <label class="form__label">
-      <textarea class="form__textarea" name="textarea" placeholder="Опишите все ваши пожелания к заказу" aria-label="Дополнительные комментарии"></textarea>
+    <label class="form__label" aria-label="Дополнительные комментарии">
+      <textarea class="form__textarea" name="textarea" placeholder="Опишите все ваши пожелания к заказу"></textarea>
     </label>
   </fieldset>
   <p class="form__text form__text--bottom">*Поля обязательны для заполнения</p>

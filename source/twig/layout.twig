@@ -4,9 +4,7 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-
     <title>Мишка: {{ title }}</title>
-
   </head>
   <body class="page__body">
 
@@ -14,12 +12,9 @@
 
     <main>
       <header class="main-header">
-
-        <h1 class="{{ page != 'index' ? 'heading main-header__heading' : 'visually-hidden' }}">{{ h1 }}</h1>
-
-        {% block extendMainHeader %}
+        {% block mainHeader %}
+          <h1 class="heading main-header__heading">{{ title }}</h1>
         {% endblock %}
-
       </header>
 
       {% block pageMain %}
