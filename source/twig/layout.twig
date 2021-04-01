@@ -4,7 +4,8 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Мишка - {{ title }}</title>
+
+    <title>Мишка: {{ title }}</title>
 
   </head>
   <body class="page__body">
@@ -12,15 +13,21 @@
     {% include 'partials/header.twig' %}
 
     <main>
+      <header class="main-header">
+
+        <h1 class="{{ page != 'index' ? 'heading main-header__heading' : 'visually-hidden' }}">{{ h1 }}</h1>
+
+        {% block extendMainHeader %}
+        {% endblock %}
+
+      </header>
+
       {% block pageMain %}
-        <h1>Страница в разработке</h1>
       {% endblock %}
+
     </main>
 
     {% include 'partials/footer.twig' %}
-
-    {% block modal %}
-    {% endblock %}
 
   </body>
 </html>

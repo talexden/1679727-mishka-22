@@ -1,11 +1,15 @@
 {% extends '../layout.twig' %}
 
-{% set title = 'главная страница' %}
+{% set title = 'Главная страница' %}
+{% set h1 = 'Магазин вязаных игрушек и вязаных товаров для дома' %}
+
+{% block extendMainHeader %}
+  {% include '../partials/main-header-extender.twig' %}
+{% endblock %}
 
 {% block pageMain %}
-  {% include '../partials/main-header.twig' %}
-  {% include '../partials/promotion.twig' %}
-  {% include '../partials/popup.twig' %}
+  {% include '../partials/promo-card.twig' %}
+  {% include '../partials/popup-form.twig' %}
   {% include '../partials/iconable-list.twig' %}
   {% include '../partials/reviews.twig' %}
   {% include '../partials/contacts.twig' %}
