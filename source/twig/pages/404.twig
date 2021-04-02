@@ -2,4 +2,6 @@
 
 {% set title = 'Страница не найдена' %}
 
-{% set h1 = '404: Страница не найдена' %}
+{% block pageMain %}
+  <h1 class="search-header search-header-lead">404: {{ title }}</h1>
+{% endblock %}

@@ -2,7 +2,7 @@
 <html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
-    <title>Мишка: Каталог</title>
+    <title>Мишка: Каталог товаров</title>
   </head>
   <body class="page__body">
     <header class="header">
@@ -58,7 +58,7 @@
         <h2 class="visually-hidden">Карточки товаров</h2>
         <ul class="catalog__list">
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="#!" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка."></a>
+            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка."></a>
             <h3 class="catalog__card-heading">Зайчик-попрыгайчик</h3>
             <p class="catalog_card-info">Рост 30 см, вес 200 г</p>
             <p class="catalog__card-price">1 200 руб.</p>
@@ -68,7 +68,7 @@
             </a>
           </li>
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="#!" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны."></a>
+            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны."></a>
             <h3 class="catalog__card-heading">Корзинка для белья</h3>
             <p class="catalog_card-info">Диаметр 15 см, высота 10 см</p>
             <p class="catalog__card-price">690 руб.</p>
@@ -78,7 +78,7 @@
             </a>
           </li>
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="#!" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками."></a>
+            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками."></a>
             <h3 class="catalog__card-heading">Большая корзинка&nbsp;для игрушек</h3>
             <p class="catalog_card-info">Диаметр 30 см, высота 30 см</p>
             <p class="catalog__card-price">1 500 руб.</p>
@@ -88,13 +88,13 @@
             </a>
           </li>
         </ul>
-        <form class="popup-form visually-hidden" action="https://echo.htmlacademy.ru/" method="get">
+        <form class="popup-form hidden" action="https://echo.htmlacademy.ru/" method="get">
           <h2 class="heading popup-form__heading">Добавить в корзину</h2>
           <fieldset class="popup-form__fieldset">
             <legend class="popup-form__fieldset-legend">Выберите размер:</legend>
             <label class="popup-form__label">
               S
-              <input class="popup-form__radio" type="radio" name="size" value="small" checked="checked">
+              <input class="popup-form__radio" type="radio" name="size" value="small" checked>
             </label>
             <label class="popup-form__label">
               M
@@ -108,8 +108,27 @@
           <button class="button popup-form__submit" type="submit">Добавить</button>
         </form>
       </section>
+      <form class="popup-form hidden" action="https://echo.htmlacademy.ru/" method="get">
+        <h2 class="heading popup-form__heading">Добавить в корзину</h2>
+        <fieldset class="popup-form__fieldset">
+          <legend class="popup-form__fieldset-legend">Выберите размер:</legend>
+          <label class="popup-form__label">
+            S
+            <input class="popup-form__radio" type="radio" name="size" value="small" checked>
+          </label>
+          <label class="popup-form__label">
+            M
+            <input class="popup-form__radio" type="radio" name="size" value="middle">
+          </label>
+          <label class="popup-form__label">
+            L
+            <input class="popup-form__radio" type="radio" name="size" value="large">
+          </label>
+        </fieldset>
+        <button class="button popup-form__submit" type="submit">Добавить</button>
+      </form>
       <section class="promo-video">
-        <video width="400" height="300" controls="controls" poster="video/video.jpg">
+        <video width="260" height="150" controls="controls" poster="https://via.placeholder.com/668x415">
           <source src="video.mp4" type="video/mp4">
           <source src="video.webm" type="video/webm">
           <source src="video.ogv" type="video/ogg">

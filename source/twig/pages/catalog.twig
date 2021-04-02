@@ -1,8 +1,9 @@
 {% extends '../layout.twig' %}
 
-{% set title = 'Каталог' %}
-{% set h1 = 'Каталог товаров' %}
+{% set title = 'Каталог товаров' %}
 
 {% block pageMain %}
-  {% include '../partials/catalog-cards.twig' %}
+  {% include '../partials/catalog-card.twig' %}
+  {% include '../partials/popup-form.twig' %}
+  {% include '../partials/promo-video.twig' %}
 {% endblock %}
