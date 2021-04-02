@@ -1,51 +1,51 @@
-const { src, dest, watch, series } = require('gulp');
-const htmlValidator = require('gulp-w3c-html-validator');
-const htmlhint = require('gulp-htmlhint');
-const lintspaces = require('gulp-lintspaces');
-const twig = require('gulp-twig');
-const data = require('gulp-data');
-const htmlBeautify = require('gulp-html-beautify');
-const gulpIf = require('gulp-if');
-const browserSync = require('browser-sync').create();
+const gulp = require("gulp");
+const plumber = require("gulp-plumber");
+const sourcemap = require("gulp-sourcemaps");
+const less = require("gulp-less");
+const postcss = require("gulp-postcss");
+const autoprefixer = require("autoprefixer");
+const sync = require("browser-sync").create();
 
-const { IS_OFFLINE } = process.env;
+// Styles
 
-const htmlTest = () => src('source/twig/**/*.twig')
-  .pipe(lintspaces({
-    editorconfig: '.editorconfig'
-  }))
-  .pipe(lintspaces.reporter());
+const styles = () => {
+  return gulp.src("source/less/style.less")
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(less())
+    .pipe(postcss([
+      autoprefixer()
+    ]))
+    .pipe(sourcemap.write("."))
+    .pipe(gulp.dest("source/css"))
+    .pipe(sync.stream());
+}
 
-const htmlBuild = () => src('source/twig/pages/**/*.twig')
-  .pipe(data(async (file) => {
-    const page = file.path.replace(/\\/g, '/').replace(/^.*?twig\/pages\/(.*)\.twig$/, '$1');
-    return {
-      page
-    };
-  }))
-  .pipe(twig())
-  .pipe(htmlBeautify())
-  .pipe(htmlhint('.htmlhintrc'))
-  .pipe(htmlhint.reporter())
-  .pipe(gulpIf(!IS_OFFLINE, htmlValidator()))
-  .pipe(gulpIf(!IS_OFFLINE, htmlValidator.reporter()))
-  .pipe(dest('source'));
+exports.styles = styles;
 
-const reload = (done) => {
-  browserSync.reload();
-  done();
-};
+// Server
 
-const watchTask = () => {
-  browserSync.init({
+const server = (done) => {
+  sync.init({
+    server: {
+      baseDir: 'source'
+    },
     cors: true,
     notify: false,
-    server: 'source',
-    ui: false
+    ui: false,
   });
+  done();
+}
 
-  watch('source/twig/**/*.twig', series(htmlTest, htmlBuild, reload));
-};
+exports.server = server;
 
-exports.test = htmlTest;
-exports.default = series(htmlTest, htmlBuild, watchTask);
+// Watcher
+
+const watcher = () => {
+  gulp.watch("source/less/**/*.less", gulp.series("styles"));
+  gulp.watch("source/*.html").on("change", sync.reload);
+}
+
+exports.default = gulp.series(
+  styles, server, watcher
+);
