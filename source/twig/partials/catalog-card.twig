@@ -1,26 +1,38 @@
-<section class="catalog">
+{% set cartLink %}
+  <a class="catalog__popup-link" href="#!">
+    {{ symbol('cart', 27, 34, 'catalog__icon') }}
+  </a>
+{% endset %}
+
+<section>
   <h2 class="visually-hidden">Карточки товаров</h2>
-  <ul class="catalog__list">
+  <ul class="catalog">
     <li class="catalog__item">
-      <a class="catalog__card-link" href="#!" ><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка."></a>
+      <a class="catalog__card-link" href="#!">
+        <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка.">
+      </a>
       <h3 class="catalog__card-heading">Зайчик-попрыгайчик</h3>
-      <p class="catalog_card-info">Рост 30 см, вес 200 г</p>
+      <p class="catalog__card-info">Рост 30 см, вес 200 г</p>
       <p class="catalog__card-price">1 200 руб.</p>
-      <a class="catalog__popup-link" href="">{{ symbol('basket', 27, 34, 'catalog__icon') }}</a>
+      {{ cartLink }}
     </li>
     <li class="catalog__item">
-      <a class="catalog__card-link" href="#!" ><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны."></a>
+      <a class="catalog__card-link" href="#!">
+        <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны.">
+      </a>
       <h3 class="catalog__card-heading">Корзинка для белья</h3>
-      <p class="catalog_card-info">Диаметр 15 см, высота 10 см</p>
+      <p class="catalog__card-info">Диаметр 15 см, высота 10 см</p>
       <p class="catalog__card-price">690 руб.</p>
-      <a class="catalog__popup-link" href="">{{ symbol('basket', 27, 34, 'catalog__icon') }}</a>
+      {{ cartLink }}
     </li>
     <li class="catalog__item">
-      <a class="catalog__card-link" href="#!" ><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками."></a>
-      <h3 class="catalog__card-heading">Большая корзинка&nbsp;для игрушек</h3>
-      <p class="catalog_card-info">Диаметр 30 см, высота 30 см</p>
+      <a class="catalog__card-link" href="#!">
+        <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками.">
+      </a>
+      <h3 class="catalog__card-heading">Большая корзинка для&nbsp;игрушек</h3>
+      <p class="catalog__card-info">Диаметр 30 см, высота 30 см</p>
       <p class="catalog__card-price">1 500 руб.</p>
-      <a class="catalog__popup-link" href="">{{ symbol('basket', 27, 34, 'catalog__icon') }}</a>
+      {{ cartLink }}
     </li>
   </ul>
   {% include 'popup-form.twig' %}

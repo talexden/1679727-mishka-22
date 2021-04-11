@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Страница не найдена</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
     <header class="header">
       <nav class="navigation">
         <a class="navigation__logo" href="index.html">
-          <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+          <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка" width="86" height="35">
         </a>
-        <button class="navigation__toggle" type="button">
+        <button class="display-none navigation__toggle" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="navigation__wrapper">
-          <ul class="navigation-primary">
+          <ul class="list-style navigation-primary">
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="catalog.html">Каталог товаров</a>
             </li>
@@ -23,7 +24,7 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
@@ -31,14 +32,14 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#basket" />
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#cart" />
                 </svg>
                 <span class="navigation-primary__text">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
-          <ul class="navigation-secondary">
+          <ul class="navigation-secondary list-style">
             <li class="navigation-secondary__item">
               <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
             </li>
@@ -52,9 +53,8 @@
     </header>
     <main>
       <header class="main-header">
-        <h1 class="heading main-header__heading">Страница не найдена</h1>
+        <h1 class="heading main-header__heading">404: Страница не найдена</h1>
       </header>
-      <h1 class="search-header search-header-lead">404: Страница не найдена</h1>
     </main>
     <footer class="footer">
       <a class="footer__logo">
@@ -62,7 +62,7 @@
       </a>
       <section class="social footer__social">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
-        <ul class="social__list ">
+        <ul class="list-style social__list ">
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Twitter</span>

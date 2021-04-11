@@ -1,13 +1,13 @@
 <header class="header">
   <nav class="navigation">
     <a class="navigation__logo" {{ page != 'index' ? 'href="index.html"' }}>
-      <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+      <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка" width="86" height="35" >
     </a>
-    <button class="navigation__toggle" type="button">
+    <button class="display-none navigation__toggle" type="button">
       <span class="visually-hidden">Открыть меню</span>
     </button>
     <div class="navigation__wrapper">
-      <ul class="navigation-primary">
+      <ul class="list-style navigation-primary">
         <li class="navigation-primary__item">
           <a class="navigation-primary__link" href="catalog.html">Каталог товаров</a>
         </li>
@@ -16,18 +16,18 @@
         </li>
         <li class="navigation-primary__item">
           <a class="navigation-primary__link" href="blank.html">
-            {{ symbol('search', 29, 29, 'navigation-primary__icon') }}
+            {{ symbol('search', 21, 21, 'navigation-primary__icon') }}
             <span class="navigation-primary__text">Поиск по сайту</span>
           </a>
         </li>
         <li class="navigation-primary__item">
           <a class="navigation-primary__link" href="blank.html">
-            {{ symbol('basket', 29, 29, 'navigation-primary__icon') }}
+            {{ symbol('cart', 21, 21, 'navigation-primary__icon') }}
             <span class="navigation-primary__text">Корзина: пока пуста</span>
           </a>
         </li>
       </ul>
-      <ul class="navigation-secondary">
+      <ul class="navigation-secondary list-style">
         <li class="navigation-secondary__item">
           <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
         </li>

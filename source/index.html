@@ -3,18 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Главная страница</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
     <header class="header">
       <nav class="navigation">
         <a class="navigation__logo">
-          <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+          <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка" width="86" height="35">
         </a>
-        <button class="navigation__toggle" type="button">
+        <button class="display-none navigation__toggle" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
         <div class="navigation__wrapper">
-          <ul class="navigation-primary">
+          <ul class="list-style navigation-primary">
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="catalog.html">Каталог товаров</a>
             </li>
@@ -23,7 +24,7 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
@@ -31,14 +32,14 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#basket" />
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#cart" />
                 </svg>
                 <span class="navigation-primary__text">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
-          <ul class="navigation-secondary">
+          <ul class="navigation-secondary list-style">
             <li class="navigation-secondary__item">
               <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
             </li>
@@ -53,9 +54,9 @@
     <main>
       <header class="main-header">
         <h1 class="visually-hidden">Магазин вязаных игрушек и вязаных товаров</h1>
-        <p class="main-header__heading">Милые штуки ручной работы для дома</p>
-        <ul class="main-header__list">
-          <li class="main-header_item">
+        <p class="main-header__heading">Милые штуки<br>ручной<br>работы для дома</p>
+        <ul class="list-style main-header__list">
+          <li class="main-header__item">
             <a class="main-header__link" href="#!">Предметы<br>интерьера</a>
           </li>
           <li class="main-header__item">
@@ -65,7 +66,7 @@
       </header>
       <section class="promotion">
         <h2 class="promotion__heading">Товар недели</h2>
-        <h3 class="heading promotion__heading">Вязаные корзинки</h3>
+        <h3 class="heading">Вязаные корзинки</h3>
         <p class="promotion__info">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках, и трех размерах.</p>
         <table class="table promotion__table">
           <tr class="table__row">
@@ -85,7 +86,7 @@
         <p class="promotion__cost">Цена: 990 руб.</p>
         <a class="button promotion__button" href="#!">Заказать</a>
       </section>
-      <form class="popup-form hidden" action="https://echo.htmlacademy.ru/" method="get">
+      <form class="popup-form" action="https://echo.htmlacademy.ru/" method="get" hidden>
         <h2 class="heading popup-form__heading">Добавить в корзину</h2>
         <fieldset class="popup-form__fieldset">
           <legend class="popup-form__fieldset-legend">Выберите размер:</legend>
@@ -106,7 +107,7 @@
       </form>
       <section class="iconable-list">
         <h2 class="heading iconable-list__heading">Коротко о нас:</h2>
-        <ul class="iconable-list__list">
+        <ul class="list-style iconable-list__list">
           <li class="iconable-list__item iconable-list__item--flower">
             Экологически чистые материалы
           </li>
@@ -131,7 +132,7 @@
       <section class="review">
         <h2 class="heading review__heading">Отзывы</h2>
         <div class="slider">
-          <ul class="slider__list">
+          <ul class="list-style slider__list">
             <li class="slider__item">
               <blockquote class="review__item">
                 <p class="review__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
@@ -150,25 +151,29 @@
         <a class="button review__link" href="blank.html" aria-label="Написать отзыв">Написать</a>
       </section>
       <section class="contacts">
-        <h2 class="heading contacts__heading">Контакты</h2>
-        <table class="table contacts__table">
-          <tr class="table__row">
-            <td class="table__data">e-mail:</td>
-            <td class="table__data">
-              <a class="contacts__link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
-            </td>
-          </tr>
-          <tr class="table__row">
-            <td class="table__data">адрес:</td>
-            <td class="table__data">
-              г. Санкт-Петербург<br>
-              Большая Конюшенная<br>
-              д. 19/8, офис 101
-            </td>
-          </tr>
-        </table>
+        <div class="contacts__wrapper">
+          <h2 class="heading contacts__heading">Контакты</h2>
+          <table class="table contacts__table">
+            <tr class="table__row">
+              <td class="table__data table__data--color">e-mail:</td>
+              <td class="table__data table__data--color">
+                <a class="contacts__link" href="mailto:info@mimimishkashop.ru">info@mimimishkashop.ru</a>
+              </td>
+            </tr>
+            <tr class="table__row">
+              <td class="table__data table__data--color">адрес:</td>
+              <td class="table__data table__data--color">
+                г. Санкт-Петербург<br>
+                Большая Конюшенная<br>
+                д. 19/8, офис 101
+              </td>
+            </tr>
+          </table>
+        </div>
         <img class="contacts__map-image" src="https://via.placeholder.com/320X454" alt="Изображение карты с меткой магазина">
-        <a class="button contacts__button" href="#!">Напишите нам</a>
+        <div class="contacts__wrapper">
+          <a class="button contacts__button" href="#!">Напишите нам</a>
+        </div>
       </section>
     </main>
     <footer class="footer">
@@ -177,7 +182,7 @@
       </a>
       <section class="social footer__social">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
-        <ul class="social__list ">
+        <ul class="list-style social__list ">
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Twitter</span>
