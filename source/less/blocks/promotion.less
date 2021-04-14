@@ -1,33 +1,52 @@
 .promotion {
+  display: flex;
+  flex-direction: column;
   min-width: 260px;
-  margin: 0 30px;
+  padding: 30px;
+}
 
-  &__heading {
-    font-weight: bold;
-    font-size: 17px;
-    line-height: 20px;
-    color: var(--color-green);
-  }
+.promotion__heading {
+  margin: 0 0 17px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 20px;
+  color: var(--color-green);
+  text-transform: uppercase;
+}
 
-  &__info {
-    font-size: 15px;
-    line-height: 24px;
-    color: var(--color-native-black);
-  }
+.promotion__lead {
+  order: -1;
+  margin: 0 0 5px;
+  transform: translateY(1px); // PP
+}
 
-  &__table {
-    font-size: 15px;
-    line-height: 20px;
-    color: var(--color-native-black);
-  }
+.promotion__info {
+  margin: 0 0 20px;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--color-native-black);
+}
 
-  &__image {
-    background-color: var(--color-basic-gray);
-  }
+.promotion__table {
+  margin-bottom: 29px;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--color-native-black);
+}
 
-  &__cost {
-    font-weight: 700;
-    font-size: 17px;
-    line-height: 24px;
-  }
+.promotion__image {
+  margin: 0 0 25px;
+  background-color: var(--color-basic-gray);
+}
+
+.promotion__cost {
+  align-self: center;
+  margin: 0 0 25px;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+}
+
+.promotion__button {
+  margin-bottom: 6px;
 }
