@@ -50,7 +50,7 @@ const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
 // Styles
 
 const stylesTest = () => {
-  return gulp.src("src/less/**/*.less")
+  return gulp.src("source/less/**/*.less")
     .pipe(lintspaces({
       editorconfig: ".editorconfig"
     }))
