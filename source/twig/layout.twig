@@ -5,6 +5,7 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: {{ title }}</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
 
@@ -12,9 +13,11 @@
 
     <main>
       <header class="main-header">
+
         {% block mainHeader %}
           <h1 class="heading main-header__heading">{{ title }}</h1>
         {% endblock %}
+
       </header>
 
       {% block pageMain %}
@@ -24,5 +27,6 @@
 
     {% include 'partials/footer.twig' %}
 
+    <script src="js/dev.js"></script>
   </body>
 </html>

@@ -1,0 +1,42 @@
+.main-header {
+  background-color: var(--color-basic-gray);
+}
+
+.main-header__main {
+  min-height: 283px;
+  background-image: url("../img/hero-mobile.jpg");
+  background-repeat: no-repeat;
+  background-position-y: -18px; // PP
+}
+
+.main-header__heading {
+  margin: 0;
+  padding: 72px 30px 120px;
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 30px;
+  text-align: center;
+}
+
+.main-header__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-header__item {
+  background-color: var(--color-green);
+
+  &:nth-of-type(even) {
+    background-color: var(--color-dark-green);
+  }
+}
+
+.main-header__link {
+  display: block;
+  padding: 24px 160px 31px 30px;
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 24px;
+  color: var(--color-basic-white);
+}

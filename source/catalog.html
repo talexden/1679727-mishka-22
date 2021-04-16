@@ -3,12 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Каталог товаров</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page__body">
     <header class="header">
       <nav class="navigation">
-        <a class="navigation__logo" href="index.html">
-          <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+        <a class="navigation__logo-link" href="index.html">
+          <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
         </a>
         <button class="navigation__toggle" type="button">
           <span class="visually-hidden">Открыть меню</span>
@@ -23,7 +24,7 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
@@ -31,14 +32,14 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#basket" />
+                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                  <use xlink:href="#cart" />
                 </svg>
                 <span class="navigation-primary__text">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
-          <ul class="navigation-secondary">
+          <ul class="navigation-secondary list-style">
             <li class="navigation-secondary__item">
               <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
             </li>
@@ -54,41 +55,50 @@
       <header class="main-header">
         <h1 class="heading main-header__heading">Каталог товаров</h1>
       </header>
-      <section class="catalog">
+      <section>
         <h2 class="visually-hidden">Карточки товаров</h2>
-        <ul class="catalog__list">
+        <ul class="catalog">
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка."></a>
+            <a class="catalog__card-link" href="#!">
+              <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаный зайчик, голубого цвета и с белой головой, на фоне оранжевого горшка.">
+            </a>
             <h3 class="catalog__card-heading">Зайчик-попрыгайчик</h3>
-            <p class="catalog_card-info">Рост 30 см, вес 200 г</p>
+            <p class="catalog__card-info">Рост 30 см, вес 200 г</p>
             <p class="catalog__card-price">1 200 руб.</p>
-            <a class="catalog__popup-link" href=""> <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#basket" />
+            <a class="catalog__popup-link" href="#!">
+              <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#cart" />
               </svg>
             </a>
           </li>
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны."></a>
+            <a class="catalog__card-link" href="#!">
+              <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Вязаная розовая корзина с белым верхом. В корзине стоят три простыни, свернутые в рулоны.">
+            </a>
             <h3 class="catalog__card-heading">Корзинка для белья</h3>
-            <p class="catalog_card-info">Диаметр 15 см, высота 10 см</p>
+            <p class="catalog__card-info">Диаметр 15 см, высота 10 см</p>
             <p class="catalog__card-price">690 руб.</p>
-            <a class="catalog__popup-link" href=""> <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#basket" />
+            <a class="catalog__popup-link" href="#!">
+              <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#cart" />
               </svg>
             </a>
           </li>
           <li class="catalog__item">
-            <a class="catalog__card-link" href="#!"><img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками."></a>
-            <h3 class="catalog__card-heading">Большая корзинка&nbsp;для игрушек</h3>
-            <p class="catalog_card-info">Диаметр 30 см, высота 30 см</p>
+            <a class="catalog__card-link" href="#!">
+              <img class="catalog__image" src="https://via.placeholder.com/260x195" alt="Большая зеленая вязаная корзина с белым верхом. Корзина наполненая вязаными игрушками.">
+            </a>
+            <h3 class="catalog__card-heading">Большая корзинка для&nbsp;игрушек</h3>
+            <p class="catalog__card-info">Диаметр 30 см, высота 30 см</p>
             <p class="catalog__card-price">1 500 руб.</p>
-            <a class="catalog__popup-link" href=""> <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#basket" />
+            <a class="catalog__popup-link" href="#!">
+              <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="#cart" />
               </svg>
             </a>
           </li>
         </ul>
-        <form class="popup-form hidden" action="https://echo.htmlacademy.ru/" method="get">
+        <form class="popup-form" action="https://echo.htmlacademy.ru/" method="get" hidden>
           <h2 class="heading popup-form__heading">Добавить в корзину</h2>
           <fieldset class="popup-form__fieldset">
             <legend class="popup-form__fieldset-legend">Выберите размер:</legend>
@@ -108,7 +118,7 @@
           <button class="button popup-form__submit" type="submit">Добавить</button>
         </form>
       </section>
-      <form class="popup-form hidden" action="https://echo.htmlacademy.ru/" method="get">
+      <form class="popup-form" action="https://echo.htmlacademy.ru/" method="get" hidden>
         <h2 class="heading popup-form__heading">Добавить в корзину</h2>
         <fieldset class="popup-form__fieldset">
           <legend class="popup-form__fieldset-legend">Выберите размер:</legend>
@@ -128,11 +138,14 @@
         <button class="button popup-form__submit" type="submit">Добавить</button>
       </form>
       <section class="promo-video">
-        <video width="260" height="150" controls="controls" poster="https://via.placeholder.com/668x415">
-          <source src="video.mp4" type="video/mp4">
-          <source src="video.webm" type="video/webm">
-          <source src="video.ogv" type="video/ogg">
-        </video>
+        <div class="pomo-video__wrapper-video">
+          <video width="668" height="455" controls="controls" poster="https://via.placeholder.com/668x415">
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.webm" type="video/webm">
+            <source src="video/video.ogv" type="video/ogg">
+          </video>
+          <button class="promo-video__button" type="button"></button>
+        </div>
         <h2 class="heading promo-video__heading">Процесс производства</h2>
         <p class="promo-video__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео
           о том, как появляются наши товары.</p>
@@ -145,7 +158,7 @@
       </a>
       <section class="social footer__social">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
-        <ul class="social__list ">
+        <ul class="social__list">
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Twitter</span>
@@ -183,5 +196,6 @@
         </p>
       </section>
     </footer>
+    <script src="js/dev.js"></script>
   </body>
 </html>
