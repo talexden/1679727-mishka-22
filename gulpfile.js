@@ -35,12 +35,26 @@ const htmlBuild = () => {
   return gulp.src("source/twig/pages/**/*.twig")
     .pipe(data((file) => {
       const page = file.path.replace(/\\/g, "/").replace(/^.*?twig\/pages\/(.*)\.twig$/, "$1");
+      const rootSrc = page.split("/");
+      rootSrc.pop();
+
       return {
         page,
+        root: rootSrc.fill("../").join(''),
         IS_DEV
       };
     }))
-    .pipe(twig())
+    .pipe(twig({
+      filters: [
+        {
+          name: "typograph",
+          func(str, nbsp) {
+            // Висячие предлоги, союзы и единицы измерения
+            return str.replace(/( | |&nbsp;|\(|>){1}([№а-уА-У]{1}|\d+) /gu, `$1$2${nbsp || ' '}`);
+          }
+        }
+      ]
+    }))
     .pipe(htmlBeautify())
     .pipe(htmlhint(".htmlhintrc"))
     .pipe(htmlhint.reporter())
