@@ -6,6 +6,9 @@
     <meta charset="utf-8">
     <title>Мишка: {{ title }}</title>
     <link rel="stylesheet" href="css/style.css">
+    {% if IS_DEV %}
+      <link rel="stylesheet" href="css/dev.css">
+    {% endif %}
   </head>
   <body class="page__body">
 
@@ -27,6 +30,8 @@
 
     {% include 'partials/footer.twig' %}
 
-    <script src="js/dev.js"></script>
+    {% if IS_DEV %}
+      <script src="js/dev.js"></script>
+    {% endif %}
   </body>
 </html>

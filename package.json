@@ -31,8 +31,8 @@
     "stylelint": "stylelint \"source/less/**/*.less\" --syntax less",
     "test": "gulp test && npm run editorconfig && npm run stylelint",
     "build": "gulp build",
-    "start": "npm test && gulp",
-    "start:offline": "cross-env IS_OFFLINE=1 gulp"
+    "start": "npm test && cross-env IS_DEV=1 gulp",
+    "start:offline": "cross-env IS_OFFLINE=1 IS_DEV=1 gulp"
   },
   "browserslist": [
     "last 2 versions",

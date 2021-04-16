@@ -13,7 +13,12 @@ const twig = require("gulp-twig");
 const data = require("gulp-data");
 const htmlBeautify = require("gulp-html-beautify");
 const gulpIf = require("gulp-if");
-const { IS_OFFLINE } = process.env;
+const { IS_DEV, IS_OFFLINE } = process.env;
+
+const stylesEntries = ["source/less/style.less"];
+if (IS_DEV) {
+  stylesEntries.push("source/less/dev.less");
+}
 
 
 // HTML
@@ -31,7 +36,8 @@ const htmlBuild = () => {
     .pipe(data((file) => {
       const page = file.path.replace(/\\/g, "/").replace(/^.*?twig\/pages\/(.*)\.twig$/, "$1");
       return {
-        page
+        page,
+        IS_DEV
       };
     }))
     .pipe(twig())
@@ -66,7 +72,7 @@ const stylesTest = () => {
 };
 
 const styles = () => {
-  return gulp.src("source/less/style.less")
+  return gulp.src(stylesEntries)
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
