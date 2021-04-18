@@ -13,7 +13,12 @@ const twig = require("gulp-twig");
 const data = require("gulp-data");
 const htmlBeautify = require("gulp-html-beautify");
 const gulpIf = require("gulp-if");
-const { IS_OFFLINE } = process.env;
+const { IS_DEV, IS_OFFLINE } = process.env;
+
+const stylesEntries = ["source/less/style.less"];
+if (IS_DEV) {
+  stylesEntries.push("source/less/dev.less");
+}
 
 
 // HTML
@@ -30,11 +35,26 @@ const htmlBuild = () => {
   return gulp.src("source/twig/pages/**/*.twig")
     .pipe(data((file) => {
       const page = file.path.replace(/\\/g, "/").replace(/^.*?twig\/pages\/(.*)\.twig$/, "$1");
+      const rootSrc = page.split("/");
+      rootSrc.pop();
+
       return {
-        page
+        page,
+        root: rootSrc.fill("../").join(''),
+        IS_DEV
       };
     }))
-    .pipe(twig())
+    .pipe(twig({
+      filters: [
+        {
+          name: "typograph",
+          func(str, nbsp) {
+            // Висячие предлоги, союзы и единицы измерения
+            return str.replace(/( | |&nbsp;|\(|>){1}([№а-уА-У]{1}|\d+) /gu, `$1$2${nbsp || ' '}`);
+          }
+        }
+      ]
+    }))
     .pipe(htmlBeautify())
     .pipe(htmlhint(".htmlhintrc"))
     .pipe(htmlhint.reporter())
@@ -50,7 +70,7 @@ const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
 // Styles
 
 const stylesTest = () => {
-  return gulp.src("src/less/**/*.less")
+  return gulp.src("source/less/**/*.less")
     .pipe(lintspaces({
       editorconfig: ".editorconfig"
     }))
@@ -66,7 +86,7 @@ const stylesTest = () => {
 };
 
 const styles = () => {
-  return gulp.src("source/less/style.less")
+  return gulp.src(stylesEntries)
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(less())
