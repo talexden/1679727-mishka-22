@@ -2,7 +2,7 @@ const Breakpoints = {
   TABLET: 768,
   DESKTOP: 1024
 };
-let currentBreakpoint = '';
+let currentBreakpoint = 'mobile';
 const pageMatch = window.location.pathname.match(/^\/(.*)\.html$/);
 const page = pageMatch ? pageMatch[1] : `index`;
 const ppOffsets = JSON.parse(localStorage.getItem(`ppOffsets`)) || {};

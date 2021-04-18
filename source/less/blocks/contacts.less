@@ -5,31 +5,38 @@
 .contacts__heading {
   margin: 0;
   // @media max-width(767px)
-  margin-bottom: 20px;
   font-size: 18px;
   line-height: 30px;
+  transform: translateX(-1px); // PP
 }
 
 .contacts__table {
+  margin-bottom: 60px;
   font-size: 14px;
   line-height: 30px;
   color: var(--color-native-black);
+  transform: translateX(-2px); // PP
 }
 
-.contacts__map-image {
-  min-width: 100vw;
-  height: 454px;
-  margin: 0 0 40px -30px;
-  object-fit: cover;
-  background-color: var(--color-basic-gray);
+.contacts__table-row--first {
+  line-height: 22px;
 }
 
 .contacts__table-data {
-  min-width: 80px;
-  margin: 0;
-  padding: 0;
+  min-width: 75px;
+  padding: 31px 0 0;
+  vertical-align: top;
 }
 
-.table__data--border {
-  border-bottom: 1px solid black;
+.contacts__link {
+  border-bottom: 1px solid var(--color-greeny);
+}
+
+.contacts__map-image {
+  display: block;
+  min-width: 100vw;
+  height: 454px;
+  margin: 0 0 42px -30px;
+  object-fit: cover;
+  background-color: var(--color-basic-gray);
 }
