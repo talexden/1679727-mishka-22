@@ -1,5 +1,28 @@
 .navigation-secondary {
   display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media @desktop {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.navigation-secondary__item {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  min-width: 185px;
+  min-height: 60px;
+  margin-right: 35px;
+  padding: 20px 20px 20px 0;
+
+  &:last-of-type {
+    margin: 0;
+    padding-right: 240px;
+  }
 }
 
 .navigation-secondary__link {

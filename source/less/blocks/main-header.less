@@ -1,14 +1,22 @@
 .main-header {
-  background-color: var(--color-basic-gray);
+  background-color: @color-basic-gray;
+
+  @media @tablet {
+    &::after {
+      content: ""; // svg картинка
+    }
+  }
 }
 
 .main-header__heading {
   margin: 0;
-  padding: 72px 30px 74px;
+  padding: 72px 0 74px;
   font-weight: 700;
-  font-size: 27px;
-  line-height: 30px;
   text-align: center;
+
+  @media @mobile {
+    font-size: 27px;
+  }
 }
 
 .main-header__heading--image {
@@ -16,20 +24,49 @@
   padding-bottom: 120px;
   background-image: url("../img/hero-mobile.jpg");
   background-repeat: no-repeat;
-  background-position-y: -18px; // PP
+  background-position: -30px -18px; // PP
+
+  @media @tablet {
+    padding: 90px @tablet-indent 370px;
+  }
+
+  @media @desktop {
+    padding: 92px @desktop-indent 355px;
+  }
 }
 
 .main-header__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
 .main-header__item {
-  background-color: var(--color-green);
+  margin: 0 -@mobile-indent;
+  background-color: @color-green;
 
   &:nth-of-type(even) {
-    background-color: var(--color-dark-green);
+    background-color: @color-dark-green;
+  }
+
+  @media @tablet {
+    width: 50%;
+    margin: 0;
+
+    &:nth-of-type(4n+2),
+    &:nth-of-type(4n+3) {
+      background-color: @color-dark-green;
+    }
+
+    &:nth-of-type(4n+1),
+    &:nth-of-type(4n+4) {
+      background-color: @color-green;
+    }
   }
 }
 
@@ -39,5 +76,16 @@
   font-weight: 700;
   font-size: 19px;
   line-height: 24px;
-  color: var(--color-white);
+  color: @color-white;
+
+  @media @tablet {
+    padding: 25px 36px 46px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+
+  @media @desktop {
+    padding-bottom: 51px;
+  }
 }

@@ -1,23 +1,84 @@
 .contacts {
-  padding: 44px 30px 40px;
+  padding: 40px 0;
+
+  @media @tablet {
+    position: relative;
+    padding: 154px 0 57px;
+    line-height: 50px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 131px;
+      right: 3px;
+      display: block;
+      width: 47px;
+      height: 81px;
+      background-color: blueviolet;
+    }
+  }
+
+  @media @desktop {
+    padding: 242px 175px 105px;
+
+    &::before {
+      top: 225px;
+      left: 63px;
+    }
+  }
 }
 
 .contacts__heading {
   margin: 0;
-  // @media max-width(767px)
   font-size: 18px;
-  line-height: 30px;
+
+  @media @tablet {
+    margin-bottom: 15px;
+    font-size: 43px;
+  }
+
+  @media @desktop {
+    margin: 0;
+    font-size: 53px;
+  }
 }
 
 .contacts__table {
   margin-bottom: 60px;
   font-size: 14px;
   line-height: 30px;
-  color: var(--color-native-black);
+  color: @color-native-black;
+
+  @media @tablet {
+    display: block;
+    margin-bottom: 47px;
+    font-size: 17px;
+
+    & tbody {
+      display: flex;
+    }
+
+    @media @desktop {
+      margin-bottom: 81px;
+    }
+  }
+
+  @media @desktop {
+    & tbody {
+      display: block;
+    }
+  }
 }
 
-.contacts__table-row--first {
-  line-height: 22px;
+.contacts__table-row {
+  &--first {
+    line-height: 22px;
+
+    @media @tablet {
+      margin-right: 48px;
+      line-height: 30px;
+    }
+  }
 }
 
 .contacts__table-data {
@@ -27,14 +88,46 @@
 }
 
 .contacts__link {
-  border-bottom: 1px solid var(--color-greeny);
+  border-bottom: 1px solid @color-greeny;
 }
 
 .contacts__map-image {
   display: block;
-  min-width: 100vw;
+  min-width: calc(100% + (2 * @mobile-indent));
   height: 454px;
-  margin: 0 0 42px -30px;
+  margin: 0 -@mobile-indent 42px -@mobile-indent;
   object-fit: cover;
-  background-color: var(--color-basic-gray);
+  background-color: @color-basic-gray;
+
+  @media @tablet {
+    min-width: calc(100% + (2 * @tablet-indent));
+    height: 457px;
+    margin: 0 -@tablet-indent 55px -@tablet-indent;
+  }
+
+  @media @desktop {
+    position: absolute;
+    top: 160px;
+    right: 0;
+    width: 50%;
+    min-width: auto;
+  }
+}
+
+.contacts__button-wrapper {
+  @media @tablet {
+    display: flex;
+    justify-content: center;
+  }
+
+  @media @desktop {
+    justify-content: flex-start;
+  }
+}
+
+.contacts__button {
+  @media @tablet {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
 }

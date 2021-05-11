@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Главная страница</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dev.css">
+    <link rel="stylesheet" href="css/style.css?1620776333369">
+    <link rel="stylesheet" href="css/dev.css?1620776333369">
   </head>
   <body class="page__body">
     <header class="header">
@@ -36,11 +36,11 @@
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#cart" />
                 </svg>
-                <span class="navigation-primary__text">Корзина: пока пуста</span>
+                <span class="navigation-primary__text navigation-primary__text--cart">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
-          <ul class="navigation-secondary list-style">
+          <ul class="navigation-secondary">
             <li class="navigation-secondary__item">
               <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
             </li>
@@ -55,7 +55,7 @@
     <main>
       <header class="main-header">
         <h1 class="visually-hidden">Магазин вязаных игрушек и вязаных товаров</h1>
-        <p class="main-header__heading main-header__heading--image">
+        <p class="heading main-header__heading main-header__heading--image">
           Милые штуки ручной<br>работы для дома
         </p>
         <ul class="main-header__list">
@@ -70,24 +70,26 @@
       <section class="promotion">
         <h2 class="promotion__heading">Товар недели</h2>
         <h3 class="heading promotion__lead">Вязаные корзинки</h3>
-        <p class="promotion__info">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.</p>
-        <table class="promotion__table">
-          <tr class="promotion__table-row">
-            <td class="promotion__table-data">Цвет:</td>
-            <td class="promotion__table-data">«Тиффани»/серый</td>
-          </tr>
-          <tr class="promotion__table-row">
-            <td class="promotion__table-data">Диаметр:</td>
-            <td class="promotion__table-data">25 см</td>
-          </tr>
-          <tr class="promotion__table-row">
-            <td class="promotion__table-data">Высота:</td>
-            <td class="promotion__table-data">15 см</td>
-          </tr>
-        </table>
-        <img class="promotion__image" src="img/triple-set-mobile.jpg" width="260" height="315" alt="Три вязаные корзинки разного цвета и размера">
-        <p class="promotion__cost">Цена: 990 руб.</p>
-        <a class="button promotion__button" href="#!">Заказать</a>
+        <div class="promotion__wrapper">
+          <p class="promotion__info">Экологически чистая пряжа, ручная работа. Доступны в шести расцветках и трёх размерах.</p>
+          <table class="promotion__table">
+            <tr class="promotion__table-row">
+              <td class="promotion__table-data">Цвет:</td>
+              <td class="promotion__table-data">«Тиффани»/серый</td>
+            </tr>
+            <tr class="promotion__table-row">
+              <td class="promotion__table-data">Диаметр:</td>
+              <td class="promotion__table-data">25 см</td>
+            </tr>
+            <tr class="promotion__table-row">
+              <td class="promotion__table-data">Высота:</td>
+              <td class="promotion__table-data">15 см</td>
+            </tr>
+          </table>
+          <img class="promotion__image" src="img/triple-set-mobile.jpg" width="260" height="315" alt="Три вязаные корзинки разного цвета и размера">
+          <p class="promotion__cost">Цена: 990 руб.</p>
+          <a class="button promotion__button" href="#!">Заказать</a>
+        </div>
       </section>
       <form class="popup-form" action="https://echo.htmlacademy.ru/" method="get" hidden>
         <h2 class="heading popup-form__heading">Добавить в корзину</h2>
@@ -137,7 +139,7 @@
           <ul class="slider__list">
             <li class="slider__item">
               <blockquote class="review__item">
-                <p class="review__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек.<br>В отчаянии, я накупила аксессуаров и игрушек в Мишке,<br>и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
+                <p class="review__text">Я молодая мама, но всё равно фотографии не набирали и близко такого количества лайков, как у популярных инстамамочек. В отчаянии, я накупила аксессуаров и игрушек в Мишке, и мои фотографии сразу стали более стильными, а также набирают больше лайков!</p>
                 <cite class="review__author">
                   <span class="review__author-name">Анастасия Красильникова</span>
                   <a class="review__author-link" href="#!">@misssssiskras</a>
@@ -175,7 +177,9 @@
           </tr>
         </table>
         <img class="contacts__map-image" src="img/map-mobile.jpg" width="320" height="455" alt="Изображение карты с меткой магазина">
-        <a class="button contacts__button" href="#!">Напишите нам</a>
+        <div class="contacts__button-wrapper">
+          <a class="button contacts__button" href="#!">Напишите нам</a>
+        </div>
       </section>
     </main>
     <footer class="footer">

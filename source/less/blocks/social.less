@@ -1,12 +1,26 @@
 .social {
-  margin: 0 0 18px;
+  padding-bottom: 23px;
+
+  @media @tablet {
+    padding: 0;
+  }
 }
 
 .social__list {
   display: flex;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.social__item {
+  margin-right: 31px;
+  background-color: lightcoral;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
 }
 
 .social__button {

@@ -6,37 +6,44 @@
   margin: 0 0 28px;
   font-size: 13px;
   line-height: 24px;
-  color: var(--color-native-black);
+  color: @color-native-black;
+
+  &--footnote {
+    margin: 0 0 32px;
+    font-size: 14px;
+    line-height: 16px;
+  }
 }
 
 .form__set {
   margin: 0;
   padding: 35px 0;
   border: none;
-  border-top: var(--border-greeny);
+  border-top: @border-greeny;
+
+  &--check {
+    padding: 35px 0 43px;
+  }
+
+  &--input-text {
+    padding: 30px 0 35px;
+  }
+
+  &--input-tel {
+    padding: 5px 0 35px;
+  }
+
+  &--input-email {
+    padding: 5px 0 35px;
+  }
+
+  &--textarea {
+    padding: 20px 0 15px;
+  }
 }
 
-.form__set--check {
-  padding: 35px 0 43px;
-}
-
-.form__set--input-text {
-  padding: 30px 0 35px;
-}
-
-.form__set--input-tel {
-  padding: 5px 0 35px;
-}
-
-.form__set--input-email {
-  padding: 5px 0 35px;
-}
-
-.form__set--textarea {
-  padding: 20px 0 15px;
-}
-
-.form__set-title {
+.form__set-heading {
+  display: block;
   min-width: 40px;
   padding: 0;
   padding-right: 20px;
@@ -44,7 +51,7 @@
   font-size: 17px;
   line-height: 16px;
   text-transform: uppercase;
-  background-color: var(--color-white);
+  background-color: @color-white;
 }
 
 .form__list {
@@ -58,6 +65,23 @@
   font-weight: 700;
   font-size: 17px;
   line-height: 18px;
+
+  &--radio {
+    margin-bottom: 24px;
+  }
+
+  &--checkbox {
+    margin-bottom: 43px;
+  }
+
+  &--input {
+    margin-bottom: 22px;
+    border-bottom: @border-black-thick;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 }
 
 
@@ -65,22 +89,6 @@
   margin: 0;
 }
 
-.form__label--radio {
-  margin-bottom: 24px;
-}
-
-.form__label--checkbox {
-  margin-bottom: 43px;
-}
-
-.form__label--input {
-  margin-bottom: 22px;
-  border-bottom: var(--border-black-thick);
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-}
 
 .form__check {
   position: absolute;
@@ -94,20 +102,15 @@
   margin: 14px 0 12px;
   padding: 0;
   font: inherit;
+  font-weight: 400;
   border: none;
-}
 
-.form__field--message {
-  min-height: 142px;
-  margin: 0;
-  padding: 15px;
-  border: var(--border-black-thick);
-}
-
-.form__text--footnote {
-  margin: 0 0 32px;
-  font-size: 14px;
-  line-height: 16px;
+  &--textarea {
+    min-height: 142px;
+    margin: 0;
+    padding: 15px;
+    border: @border-black-thick;
+  }
 }
 
 .form__submit {

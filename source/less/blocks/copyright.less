@@ -1,11 +1,24 @@
 .copyright {
-  border-top: 1px solid var(--color-gray);
+  padding-top: 20px;
+  border-top: 1px solid @color-gray;
+
+  @media @tablet {
+    padding: 0;
+  }
 }
 
 .copyright__text {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
   font-weight: 700;
   font-size: 19px;
   line-height: 18px;
+}
+
+.copyright__link {
+  display: block;
+  margin-left: 27px;
+  background-color: lightcoral;
 }
