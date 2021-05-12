@@ -41,7 +41,8 @@ const htmlBuild = () => {
       return {
         page,
         root: rootSrc.fill("../").join(''),
-        IS_DEV
+        IS_DEV,
+        ver: IS_DEV ? `?${Date.now()}` : ""
       };
     }))
     .pipe(twig({

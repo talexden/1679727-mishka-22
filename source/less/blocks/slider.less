@@ -2,14 +2,35 @@
   margin: 0 0 30px;
   padding: 0;
   list-style: none;
+
+  @media @tablet {
+    margin: 0;
+  }
 }
 
 .slider__navigation {
   display: flex;
-  height: 52px;
+  height: 50px;
   margin: 0 0 38px;
+
+  @media @tablet {
+    position: absolute;
+    right: 19px;
+    min-width: 137px;
+    height: auto;
+    min-height: 26px;
+    margin: 0;
+    transform: translateY(-40px);
+  }
 }
 
 .slider__button {
   width: 50%;
+
+  @media @tablet {
+    margin: 0;
+    padding: 0;
+    background-color: blueviolet;
+    border: none;
+  }
 }

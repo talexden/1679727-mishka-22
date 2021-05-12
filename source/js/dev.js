@@ -1,11 +1,18 @@
 const Breakpoints = {
   TABLET: 768,
-  DESKTOP: 1024
+  DESKTOP: 1150
 };
+const dafaultOfsets = {
+  mobile: [0, 0],
+  tablet: [0, 0],
+  desctop: [0, 0]
+}
 let currentBreakpoint = 'mobile';
 const pageMatch = window.location.pathname.match(/^\/(.*)\.html$/);
 const page = pageMatch ? pageMatch[1] : `index`;
-const ppOffsets = JSON.parse(localStorage.getItem(`ppOffsets`)) || {};
+const ppOffsets = JSON.parse(localStorage.getItem(`ppOffsets`)) || {
+  [page]: defaultOffsets
+};
 const ppEl = document.body;
 
 const saveOffsets = () => localStorage.setItem(`ppOffsets`, JSON.stringify(ppOffsets));
@@ -52,11 +59,7 @@ const changeScreenMode = () => {
 changeScreenMode();
 
 if (!ppOffsets[page]) {
-  ppOffsets[page] = {
-    mobile: [0, 0],
-    tablet: [0, 0],
-    desktop: [0, 0]
-  };
+  ppOffsets[page] = defaultOffsets;
   saveOffsets();
 }
 

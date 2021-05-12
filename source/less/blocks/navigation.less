@@ -1,18 +1,40 @@
-.navigation__text {
-  display: none;
-  font-size: 15px;
-  line-height: 24px;
-  color: var(--color-native-black);
+.navigation {
+  @media @tablet {
+    position: relative;
+  }
 }
 
 .navigation__logo-link {
   display: table;
   margin: auto;
   padding: 22px;
+
+  @media @tablet {
+    position: absolute;
+  }
+
+  @media @desktop {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .navigation__logo-image {
   display: block;
+}
+
+.navigation__text {
+  display: none;
+
+  @media @tablet {
+    position: absolute;
+    right: 0;
+    bottom: 8px;
+    display: block;
+    font-size: 15px;
+    line-height: 24px;
+    color: @color-native-black;
+  }
 }
 
 .navigation__toggle {

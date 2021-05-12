@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Каталог товаров</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dev.css">
+    <link rel="stylesheet" href="css/style.css?1620776333336">
+    <link rel="stylesheet" href="css/dev.css?1620776333336">
   </head>
   <body class="page__body">
     <header class="header">
@@ -36,11 +36,11 @@
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="#cart" />
                 </svg>
-                <span class="navigation-primary__text">Корзина: пока пуста</span>
+                <span class="navigation-primary__text navigation-primary__text--cart">Корзина: пока пуста</span>
               </a>
             </li>
           </ul>
-          <ul class="navigation-secondary list-style">
+          <ul class="navigation-secondary">
             <li class="navigation-secondary__item">
               <a class="navigation-secondary__link" href="blank.html">Новые поступления</a>
             </li>
@@ -145,15 +145,15 @@
         <button class="button popup-form__submit" type="submit">Добавить</button>
       </form>
       <section class="promo-video">
+        <h2 class="heading promo-video__heading">Процесс производства</h2>
         <div class="pomo-video__wrapper-video">
           <video class="pomo-video__player" poster="../img/video-mobile.jpg">
             <source src="video/video.mp4" type="video/mp4">
             <source src="video/video.webm" type="video/webm">
             <source src="video/video.ogv" type="video/ogg">
           </video>
-          <button class="promo-video__player-button" type="button"></button>
+          <button class="promo-video__player-button" type="button" aria-label="Посмотреть видео"></button>
         </div>
-        <h2 class="heading promo-video__heading">Процесс производства</h2>
         <p class="promo-video__text">По просьбам наших любимых фолловеров мы сняли для вас подробное видео
           о том, как появляются наши товары.</p>
         <a class="button promo-video__button" href="#!">Сделать заказ</a>

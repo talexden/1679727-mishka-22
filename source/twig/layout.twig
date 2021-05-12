@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: {{ title }}</title>
-    <link rel="stylesheet" href="{{ root }}css/style.css">
+    <link rel="stylesheet" href="{{ root }}css/style.css{{ ver }}">
     {% if IS_DEV %}
-      <link rel="stylesheet" href="{{ root }}css/dev.css">
+      <link rel="stylesheet" href="{{ root }}css/dev.css{{ ver }}">
     {% endif %}
   </head>
   <body class="page__body">
