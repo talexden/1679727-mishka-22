@@ -1,5 +1,9 @@
 .form {
-  padding: 18px 30px 58px;
+  padding: 18px 0 58px;
+
+  @media @tablet {
+    padding: 53px 0 58px;
+  }
 }
 
 .form__text {
@@ -7,6 +11,12 @@
   font-size: 13px;
   line-height: 24px;
   color: @color-native-black;
+
+  @media @tablet {
+    margin-bottom: 45px;
+    font-size: 17px;
+    line-height: 30px;
+  }
 
   &--footnote {
     margin: 0 0 32px;
@@ -21,8 +31,25 @@
   border: none;
   border-top: @border-greeny;
 
-  &--check {
+  @media @tablet {
+    position: relative;
+    border: none;
+  }
+
+  &--radio {
     padding: 35px 0 43px;
+
+    @media @tablet {
+      margin-bottom: 54px;
+    }
+  }
+
+  &--checkbox {
+    padding: 35px 0 43px;
+
+    @media @tablet {
+      margin-bottom: 14px;
+    }
   }
 
   &--input-text {
@@ -52,12 +79,32 @@
   line-height: 16px;
   text-transform: uppercase;
   background-color: @color-white;
+
+  @media @tablet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 36px;
+  }
 }
 
 .form__list {
   margin: 0;
   padding-left: 60px;
   list-style: none;
+
+  @media @tablet {
+    padding-left: 247px;
+  }
+
+  &--checkbox {
+    @media @tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 105px;
+      row-gap: 15px;
+    }
+  }
 }
 
 .form__label {
@@ -66,8 +113,17 @@
   font-size: 17px;
   line-height: 18px;
 
+  @media @tablet {
+    font-size: 19px;
+    line-height: 18px;
+  }
+
   &--radio {
     margin-bottom: 24px;
+
+    @media @tablet {
+      margin-bottom: 58px;
+    }
   }
 
   &--checkbox {
@@ -114,6 +170,7 @@
 }
 
 .form__submit {
+  width: 100%;
   padding: 16px;
   font-size: 17px;
   line-height: 16px;
