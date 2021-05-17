@@ -1,16 +1,46 @@
 .catalog {
-  margin: 0 0 30px;
-  padding: 0 30px;
+  margin-bottom: 30px;
+  padding: 0;
+
+  @media @tablet {
+    margin: 0;
+    padding: 66px 0 53px;
+  }
+
+  @media @desktop {
+    padding: 111px 0 57px;
+  }
 }
 
 .catalog__list {
   margin: 0;
   padding: 0;
   list-style: none;
+
+  @media @tablet {
+    display: grid;
+    gap: 54px;
+  }
+
+  @media @desktop {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 51px;
+  }
 }
 
 .catalog__item {
   padding-top: 30px;
+
+  @media @tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+  }
+
+  @media @desktop {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .catalog__card-link {
@@ -22,11 +52,35 @@
   width: 100%;
   // margin-top: 30px;
   object-fit: cover;
+
+  @media @desktop {  // Remove me!!!
+    height: 462px;
+  }
 }
 
 .catalog__card-wrapper {
   padding: 27px;
   border: @border-grayny;
+
+  @media @tablet {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-height: 334px;
+    padding: 26px 32px;
+
+    &::after {
+      content: "";
+      flex-grow: 1;
+      min-height: 7px;
+    }
+  }
+
+  @media @desktop {
+    min-height: auto;
+    padding-left: 27px;
+  }
 }
 
 .catalog__card-heading {
@@ -34,12 +88,21 @@
   font-weight: 700;
   font-size: 17px;
   line-height: 24px;
+
+  @media @tablet {
+    font-size: 20px;
+  }
 }
 
 .catalog__card-info {
   margin: 0 0 16px;
   font-size: 13px;
   line-height: 30px;
+
+  @media @tablet {
+    margin-bottom: 6px;
+    font-size: 15px;
+  }
 }
 
 .catalog__card-price {
@@ -49,6 +112,11 @@
   font-size: 15px;
   line-height: 24px;
   border-top: @border-grayny;
+
+  @media @tablet {
+    order: 20;
+    font-size: 17px;
+  }
 }
 
 .catalog__popup-link {

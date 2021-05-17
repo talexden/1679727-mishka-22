@@ -2,9 +2,8 @@
   background-color: @color-basic-gray;
 
   @media @tablet {
-    &::after {
-      content: ""; // svg картинка
-    }
+    margin: 0 -50px;
+    padding: 0 50px;
   }
 }
 
@@ -17,6 +16,14 @@
   @media @mobile {
     font-size: 27px;
   }
+
+  @media @tablet {
+    padding: 33px 0 87px;
+  }
+
+  @media @desktop {
+    padding: 37px 0 112px;
+  }
 }
 
 .main-header__heading--image {
@@ -27,11 +34,11 @@
   background-position: -30px -18px; // PP
 
   @media @tablet {
-    padding: 90px @tablet-indent 370px;
+    padding: 88px 50px 370px;
   }
 
   @media @desktop {
-    padding: 92px @desktop-indent 355px;
+    padding: 93px 50px 355px;
   }
 }
 
@@ -47,7 +54,7 @@
 }
 
 .main-header__item {
-  margin: 0 -@mobile-indent;
+  margin: 0 -30px;
   background-color: @color-green;
 
   &:nth-of-type(even) {
@@ -61,11 +68,6 @@
     &:nth-of-type(4n+2),
     &:nth-of-type(4n+3) {
       background-color: @color-dark-green;
-    }
-
-    &:nth-of-type(4n+1),
-    &:nth-of-type(4n+4) {
-      background-color: @color-green;
     }
   }
 }

@@ -5,7 +5,7 @@ const Breakpoints = {
 const dafaultOfsets = {
   mobile: [0, 0],
   tablet: [0, 0],
-  desctop: [0, 0]
+  desktop: [0, 0]
 }
 let currentBreakpoint = 'mobile';
 const pageMatch = window.location.pathname.match(/^\/(.*)\.html$/);

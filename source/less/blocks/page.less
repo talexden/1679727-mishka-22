@@ -1,6 +1,6 @@
 .page__body {
   margin: 0;
-  padding: 0 @mobile-indent;
+  padding: 0 30px;
   overflow-y: scroll;
   font-size: 17px;
   line-height: 30px;
@@ -8,13 +8,7 @@
 
   @media @tablet {
     display: grid;
-    padding: 0 @tablet-indent;
-    // height: 100vh; // не корректно работает PP
-  }
-
-  @media @desktop {
-    display: grid;
-    padding: 0 @desktop-indent;
+    padding: 0 50px;
     // height: 100vh; // не корректно работает PP
   }
 }

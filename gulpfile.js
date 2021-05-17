@@ -40,7 +40,7 @@ const htmlBuild = () => {
 
       return {
         page,
-        root: rootSrc.fill("../").join(''),
+        root: rootSrc.fill("../").join(""),
         IS_DEV,
         ver: IS_DEV ? `?${Date.now()}` : ""
       };
@@ -51,7 +51,7 @@ const htmlBuild = () => {
           name: "typograph",
           func(str, nbsp) {
             // Висячие предлоги, союзы и единицы измерения
-            return str.replace(/( | |&nbsp;|\(|>){1}([№а-уА-У]{1}|\d+) /gu, `$1$2${nbsp || ' '}`);
+            return str.replace(/( | |&nbsp;|\(|>){1}([№а-уА-У]{1}|\d+) /gu, `$1$2${nbsp || " "}`);
           }
         }
       ]

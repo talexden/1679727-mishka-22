@@ -1,7 +1,18 @@
+:root {
+  --color-basic-gray: #f9f9f9;
+  --switched-color-grayny: #ececec;
+  --full-width: calc(100% + 60px);
+
+  @media @tablet {
+    --switched-color-grayny: #e6e6e6;
+    --full-width: calc(100% + 100px);
+  }
+}
+
 @color-white: #ffffff;
-@color-basic-gray: #f1f1f1;
-@color-grayny: #ececec;
+@color-basic-gray: #f9f9f9;
 @color-gray: #e5e5e5;
+@color-grayny: #ececec;
 @color-green: #63d1bb;
 @color-greeny: #62d1ba;
 @color-dark-green: #56c3b2;
@@ -10,18 +21,11 @@
 @color-dark-brown: #231f20;
 @color-black: #000000;
 
+@border-switched-grayny: 1px solid var(--switched-color-grayny);
 @border-grayny: 1px solid @color-grayny;
 @border-greeny: 1px solid @color-greeny;
 @border-black-thick: 2px solid @color-native-black;
 
-@tablet-indent: 50px;
-@tablet-width: 768px;
-@tablet: (min-width: @tablet-width);
-
-@desktop-indent: 50px;
-@desktop-width: 1150px;
-@desktop: (min-width: @desktop-width);
-
-@mobile-indent: 30px;
-@mobile-width-only: 767px;
-@mobile: (max-width: @mobile-width-only);
+@tablet: (min-width: 768px);
+@desktop: (min-width: 1150px);
+@mobile: (max-width: 767px);
