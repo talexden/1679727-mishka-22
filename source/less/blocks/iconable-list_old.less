@@ -2,23 +2,23 @@
   padding: 35px 0;
 
   @media @tablet {
-    padding: 76px 0 70px;
+    padding: 76px 0 83px;
   }
 
   @media @desktop {
-    padding: 152px 175px 77px;
+    padding: 152px 175px 90px;
   }
 }
 
 .iconable-list__heading {
-  margin: 0 0 23px;
+  margin: 0 0 80px;
 
   @media @tablet {
-    margin-bottom: 43px;
+    margin-bottom: 100px;
   }
 
   @media @desktop {
-    margin-bottom: 39px;
+    margin-bottom: 95px;
   }
 }
 
@@ -28,35 +28,24 @@
   list-style: none;
 
   @media @tablet {
-    display: grid;
-    grid-template-columns: 290px 290px;
-    gap: 45px;
-    // padding-right: 40px;
-  }
-
-  @media @desktop {
-    column-gap: 60px;
-    row-gap: 40px;
+    display: flex;
+    flex-wrap: wrap;
   }
 }
 
 .iconable-list__item {
-  margin: 0 0 27px;
+  margin: 0 0 83px;
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
 
-  &::before {  // иконки
-    content: "";
-    display: block;
-    width: 55px;
-    height: 38px;
-    margin-bottom: 18px;
+  &:nth-last-of-type(1) {
+    margin: 0;
   }
 
   @media @tablet {
     width: 50%;
-    margin-bottom: 14px;
+    margin-bottom: 115px;
     font-size: 20px;
   }
 
@@ -80,9 +69,14 @@
     &:nth-of-type(6) {
       order: 6;
     }
+
+    &:nth-last-of-type(4) {
+      margin: 0;
+    }
   }
 
   @media @desktop {
+    margin-bottom: 110px;
     line-height: 22px;
   }
 }

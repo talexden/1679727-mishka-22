@@ -7,14 +7,13 @@
     line-height: 50px;
 
     &::before {
-      content: "";
+      content: ""; // флаг
       position: absolute;
       top: 131px;
       right: 3px;
       display: block;
       width: 47px;
       height: 81px;
-      background-color: blueviolet;
     }
   }
 
@@ -54,17 +53,17 @@
     margin-bottom: 47px;
     font-size: 17px;
 
-    & tbody {
-      display: flex;
-    }
-
     @media @desktop {
       margin-bottom: 81px;
     }
   }
 
-  @media @desktop {
-    & tbody {
+  tbody {
+    @media @tablet {
+      display: flex;
+    }
+
+    @media @desktop {
       display: block;
     }
   }
@@ -93,16 +92,15 @@
 
 .contacts__map-image {
   display: block;
-  min-width: calc(100% + (2 * @mobile-indent));
+  min-width: var(--full-width);
   height: 454px;
-  margin: 0 -@mobile-indent 42px -@mobile-indent;
+  margin: 0 -30px 42px -30px;
   object-fit: cover;
   background-color: @color-basic-gray;
 
   @media @tablet {
-    min-width: calc(100% + (2 * @tablet-indent));
     height: 457px;
-    margin: 0 -@tablet-indent 55px -@tablet-indent;
+    margin: 0 -50px 55px -50px;
   }
 
   @media @desktop {
@@ -111,6 +109,7 @@
     right: 0;
     width: 50%;
     min-width: auto;
+    margin-right: 0;
   }
 }
 
