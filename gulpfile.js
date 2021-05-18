@@ -1,6 +1,6 @@
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
-const sourcemap = require("gulp-sourcemaps");
+// const sourcemap = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const stylelint = require("gulp-stylelint");
@@ -62,7 +62,7 @@ const htmlBuild = () => {
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator()))
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator.reporter()))
     .pipe(gulp.dest("source"))
-    .pipe(sync.stream());
+    // .pipe(sync.stream());
 };
 
 const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
@@ -88,15 +88,15 @@ const stylesTest = () => {
 
 const styles = () => {
   return gulp.src(stylesEntries)
-    .pipe(plumber())
-    .pipe(sourcemap.init())
+    // .pipe(plumber())
+    //.pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
       autoprefixer()
     ]))
-    .pipe(sourcemap.write("."))
+    //.pipe(sourcemap.write("."))
     .pipe(gulp.dest("source/css"))
-    .pipe(sync.stream());
+    // .pipe(sync.stream());
 };
 
 const stylesTasks = gulp.parallel(stylesTest, styles);
@@ -115,10 +115,16 @@ const server = (done) => {
   done();
 };
 
+// Перезагрузка страницы в браузере
+const reload = (done) => {
+  sync.reload();
+  done();
+};
+
 // Watcher
 const watcher = () => {
-  gulp.watch("source/twig/**/*.twig", htmlTasks);
-  gulp.watch("source/less/**/*.less", stylesTasks);
+  gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
+  gulp.watch("source/less/**/*.less", gulp.series(stylesTasks, reload));
 };
 
 exports.test = gulp.parallel(htmlTest, stylesTest);

@@ -1,5 +1,13 @@
 .form {
-  padding: 18px 30px 58px;
+  padding: 18px 0 58px;
+
+  @media @tablet {
+    padding: 53px 0 58px;
+  }
+
+  @media @desktop {
+    padding: 99px 0 23px;
+  }
 }
 
 .form__text {
@@ -8,10 +16,30 @@
   line-height: 24px;
   color: @color-native-black;
 
+  @media @tablet {
+    margin-bottom: 14px;
+    font-size: 17px;
+    line-height: 30px;
+  }
+
+  @media @desktop {
+    padding: 0 175px;
+  }
+
   &--footnote {
     margin: 0 0 32px;
     font-size: 14px;
     line-height: 16px;
+
+    @media @tablet {
+      margin: 0 0 10px 10px;
+      font-size: 17px;
+      line-height: 30px;
+    }
+
+    @media @desktop {
+      padding: 0;
+    }
   }
 }
 
@@ -21,24 +49,81 @@
   border: none;
   border-top: @border-greeny;
 
-  &--check {
+  @media @tablet {
+    position: relative;
+    border: none;
+  }
+
+  &--radio {
     padding: 35px 0 43px;
+
+    @media @tablet {
+      padding: 67px 60px 66px 247px;
+    }
+
+    @media @desktop {
+      padding: 67px 60px 66px 255px;
+    }
+  }
+
+  &--checkbox {
+    padding: 35px 0 43px;
+
+    @media @tablet {
+      padding: 66px 10px 25px 249px;
+    }
+
+    @media @desktop {
+      padding: 66px 60px 25px 257px;
+    }
   }
 
   &--input-text {
     padding: 30px 0 35px;
+
+    @media @tablet {
+      padding: 48px 0 38px 167px;
+    }
+
+    @media @desktop {
+      padding: 48px 177px 38px 175px;
+    }
   }
 
   &--input-tel {
     padding: 5px 0 35px;
+
+    @media @tablet {
+      padding: 10px 0 0 141px;
+    }
+
+    @media @desktop {
+      padding: 10px 175px 0 149px;
+    }
   }
 
   &--input-email {
     padding: 5px 0 35px;
+
+    @media @tablet {
+      padding: 10px 0 0 141px;
+    }
+
+    @media @desktop {
+      padding: 10px 175px 0 149px;
+    }
   }
 
   &--textarea {
     padding: 20px 0 15px;
+
+    @media @tablet {
+      padding: 51px 0 20px 167px;
+    }
+
+    @media @desktop {
+      padding: 51px 175px 20px 175px;
+    }
   }
 }
 
@@ -52,12 +137,53 @@
   line-height: 16px;
   text-transform: uppercase;
   background-color: @color-white;
+
+  @media @tablet {
+    position: absolute;
+    top: 67px;
+    left: 0;
+    background-color: inherit;
+  }
+
+  @media @tablet {
+    left: 61px;
+  }
+
+  &--input-tel {
+    @media @tablet {
+      top: 27px;
+    }
+  }
+
+  &--input-email {
+    @media @tablet {
+      top: 27px;
+    }
+  }
 }
 
 .form__list {
   margin: 0;
   padding-left: 60px;
   list-style: none;
+
+  @media @tablet {
+    padding: 0;
+  }
+
+  &--checkbox {
+    @media @tablet {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 113px;
+      row-gap: 15px;
+    }
+
+    @media @desktop {
+      grid-template-columns: 210px 210px 210px;
+      column-gap: 52px;
+    }
+  }
 }
 
 .form__label {
@@ -66,8 +192,16 @@
   font-size: 17px;
   line-height: 18px;
 
+  @media @tablet {
+    font-size: 19px;
+  }
+
   &--radio {
     margin-bottom: 24px;
+
+    @media @tablet {
+      margin-bottom: 58px;
+    }
   }
 
   &--checkbox {
@@ -77,6 +211,14 @@
   &--input {
     margin-bottom: 22px;
     border-bottom: @border-black-thick;
+
+    @media @tablet {
+      display: flex;
+      align-items: baseline;
+      margin-bottom: 10px;
+      padding: 0 0 12px 0;
+      border: none;
+    }
 
     &:last-of-type {
       margin-bottom: 0;
@@ -105,6 +247,14 @@
   font-weight: 400;
   border: none;
 
+  @media @tablet {
+    height: 54px;
+    margin: 0 0 0 26px;
+    padding-left: 17px;
+    background-color: inherit;
+    border-bottom: @border-black-thick;
+  }
+
   &--textarea {
     min-height: 142px;
     margin: 0;
@@ -113,9 +263,54 @@
   }
 }
 
+
+.form__group {
+  @media @tablet {
+    &:nth-child(odd) {
+      margin: 0 var(--margin);
+      padding-right: var(--padding);
+      padding-left: var(--padding);
+      background-color: @color-light-gray;
+    }
+
+    &:last-child {
+      background-color: @color-white;
+    }
+  }
+
+  &--contacts {
+    @media @tablet {
+      padding-top: 38px;
+      padding-bottom: 38px;
+    }
+  }
+}
+
+.form__button-wrapper {
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 31px 50px;
+  }
+
+  @media @desktop {
+    padding: 27px 175px;
+  }
+}
+
 .form__submit {
+  width: 100%;
   padding: 16px;
   font-size: 17px;
   line-height: 16px;
   font-family: inherit;
+
+  @media @tablet {
+    order: -1;
+    width: auto;
+    margin-right: auto;
+    padding: 16px 30px;
+    background-color: inherit;  // не могу понять, откуда серый фон взялся?
+  }
 }
