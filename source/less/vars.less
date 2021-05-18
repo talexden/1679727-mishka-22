@@ -7,9 +7,15 @@
     --switched-color-grayny: #e6e6e6;
     --full-width: calc(100% + 100px);
   }
+
+  @media @desktop {
+    --padding: calc((100vw - 1050px ) * 0.5);
+    --margin: calc(-1 * var(--padding));
+  }
 }
 
 @color-white: #ffffff;
+@color-light-gray: #f1f1f1;
 @color-basic-gray: #f9f9f9;
 @color-gray: #e5e5e5;
 @color-grayny: #ececec;
