@@ -13,7 +13,26 @@ const twig = require("gulp-twig");
 const data = require("gulp-data");
 const htmlBeautify = require("gulp-html-beautify");
 const gulpIf = require("gulp-if");
+const imagemin = require("gulp-imagemin");
+const svgstore = require("gulp-svgstore");
+const rename = require("gulp-rename");
+const cssBase64 = require("gulp-css-base64");
+
 const { IS_DEV, IS_OFFLINE } = process.env;
+const SVGO_PLUGINS_CONFIG = {
+  floatPrecision: 2
+};
+const SVGO_CONFIG = {
+  plugins: [
+    { removeViewBox: false },
+    { removeTitle: true },
+    { cleanupNumericValues: SVGO_PLUGINS_CONFIG },
+    { convertPathData: SVGO_PLUGINS_CONFIG },
+    { transformsWithOnePath: SVGO_PLUGINS_CONFIG },
+    { convertTransform: SVGO_PLUGINS_CONFIG },
+    { cleanupListOfValues: SVGO_PLUGINS_CONFIG }
+  ]
+};
 
 const stylesEntries = ["source/less/style.less"];
 if (IS_DEV) {
@@ -94,12 +113,30 @@ const styles = () => {
     .pipe(postcss([
       autoprefixer()
     ]))
+    .pipe(cssBase64({
+      baseDir: "../img/icons",
+      extensionsAllowed: [".svg", ".png"],
+      maxWeightResource: 10000
+    }))
     //.pipe(sourcemap.write("."))
     .pipe(gulp.dest("source/css"))
     // .pipe(sync.stream());
 };
 
 const stylesTasks = gulp.parallel(stylesTest, styles);
+
+
+// Сборка спрайта
+const iconsmin = () => gulp.src("source/img/icons/**/*.svg")
+  .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
+  .pipe(gulp.dest("source/img/icons"));
+
+const spriteBuild = () => gulp.src("source/img/icons/**/*.svg")
+  .pipe(svgstore({
+    inlineSvg: true
+  }))
+  .pipe(rename("sprite.svg"))
+  .pipe(gulp.dest("source/img"));
 
 
 // Server
@@ -125,9 +162,10 @@ const reload = (done) => {
 const watcher = () => {
   gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
   gulp.watch("source/less/**/*.less", gulp.series(stylesTasks, reload));
+  gulp.watch("source/img/icons/**/*.svg", gulp.series(iconsmin, gulp.parallel(styles, spriteBuild), reload));
 };
 
 exports.test = gulp.parallel(htmlTest, stylesTest);
-const build = gulp.parallel(htmlTasks, stylesTasks);
+const build = gulp.series(iconsmin, gulp.parallel(htmlTasks, stylesTasks, spriteBuild));
 exports.build = build;
 exports.default = gulp.series(build, server, watcher);
