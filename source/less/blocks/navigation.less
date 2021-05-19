@@ -10,8 +10,19 @@
   margin: auto;
   padding: 22px;
 
+  &:hover,
+  &:focus {
+    opacity: 60%;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+
   @media @tablet {
     position: absolute;
+    top: 22px;
+    padding: 0;
   }
 
   @media @desktop {

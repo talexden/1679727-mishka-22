@@ -31,6 +31,15 @@
 .catalog__item {
   padding-top: 30px;
 
+  &:hover .catalog__card-wrapper,
+  &:focus .catalog__card-wrapper {
+    box-shadow: 0 6px 10px fade(@color-black, 10%);
+  }
+
+  &:active .catalog__card-wrapper {
+    box-shadow: 0 3px 5px fade(@color-black, 10%);
+  }
+
   @media @tablet {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -87,6 +96,15 @@
   font-weight: 700;
   font-size: 17px;
   line-height: 24px;
+
+  &:hover,
+  &:focus {
+    opacity: 60%;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
 
   @media @tablet {
     font-size: 20px;

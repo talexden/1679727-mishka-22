@@ -62,8 +62,22 @@
   margin: 0 -30px;
   background-color: @color-green;
 
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: @color-light-green;
+    box-shadow: 0 -5px 0 @color-light-green;
+  }
+
   &:nth-of-type(even) {
     background-color: @color-dark-green;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: @color-darky-green;
+      box-shadow: 0 -5px 0 @color-darky-green;
+    }
   }
 
   @media @tablet {
@@ -84,6 +98,11 @@
   font-size: 19px;
   line-height: 24px;
   color: @color-white;
+
+  &:hover,
+  &:focus {
+    transform: translateY(-5px);
+  }
 
   @media @tablet {
     padding: 25px 36px 46px;
