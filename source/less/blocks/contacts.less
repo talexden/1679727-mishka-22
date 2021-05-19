@@ -87,7 +87,17 @@
 }
 
 .contacts__link {
-  border-bottom: 1px solid @color-greeny;
+  border-bottom: @border-greeny;
+
+  &:hover,
+  &:focus {
+    color: @color-darky-green;
+  }
+
+  &:active {
+    color: @color-darky-green;
+    border-color: fade(@color-darky-green, 10%);
+  }
 }
 
 .contacts__map-image {
