@@ -1,18 +1,46 @@
 .review {
+  position: relative;
   padding: 25px 0 50px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: -30px;
+    width: 100vw;
+    height: 6px;
+    background: @color-light-gray;
+    mask-image: var(--svg-zigzag-line);
+  }
 
   @media @tablet {
     position: relative;
     margin-left: -50px;
-    padding: 82px 0 47px 50px;
+    padding: 82px 0 133px 50px;
     background-image: url("../img/review.jpg");
     background-repeat: no-repeat;
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      height: 17px;
+      mask-size: 768px 17px;
+    }
   }
 
   @media @desktop {
     margin: 0;
-    padding-bottom: 95px;
+    padding-bottom: 185px;
     padding-left: 175px;
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 1050px;
+      height: 23px;
+      margin: 0;
+      mask-size: 1050px 23px;
+    }
   }
 }
 

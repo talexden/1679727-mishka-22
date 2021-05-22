@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Каталог товаров</title>
-    <link rel="stylesheet" href="css/style.css?1621457881460">
-    <link rel="stylesheet" href="css/dev.css?1621457881460">
+    <link rel="stylesheet" href="css/style.css?1621763183274">
+    <link rel="stylesheet" href="css/dev.css?1621763183274">
   </head>
   <body class="page__body">
     <header class="header">
-      <nav class="navigation">
-        <a class="navigation__logo-link" href="index.html">
-          <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
-        </a>
+      <nav class="navigation navigation--opened navigation--nojs">
+        <div class="navigation__logo-wrapper">
+          <a class="navigation__logo-link" href="index.html">
+            <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+          </a>
+        </div>
         <button class="navigation__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
+          <span class="visually-hidden">Открыть/Закрыть меню</span>
         </button>
         <div class="navigation__wrapper">
           <ul class="navigation-primary">
@@ -26,7 +28,7 @@
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#search" />
+                  <use xlink:href="img/sprite.svg#header-search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
               </a>
@@ -34,7 +36,7 @@
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#cart" />
+                  <use xlink:href="img/sprite.svg#cart" />
                 </svg>
                 <span class="navigation-primary__text navigation-primary__text--cart">Корзина: пока пуста</span>
               </a>
@@ -70,7 +72,7 @@
               <p class="catalog__card-info">Рост 30 см, вес 200 г</p>
               <p class="catalog__card-price">1 200 руб. <a class="catalog__popup-link" href="#!">
                   <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="#cart" />
+                    <use xlink:href="img/sprite.svg#cart" />
                   </svg>
                 </a>
               </p>
@@ -87,7 +89,7 @@
               <p class="catalog__card-info">Диаметр 15 см, высота 10 см</p>
               <p class="catalog__card-price">690 руб. <a class="catalog__popup-link" href="#!">
                   <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="#cart" />
+                    <use xlink:href="img/sprite.svg#cart" />
                   </svg>
                 </a>
               </p>
@@ -104,7 +106,7 @@
               <p class="catalog__card-info">Диаметр 30 см, высота 30 см</p>
               <p class="catalog__card-price">1 500 руб. <a class="catalog__popup-link" href="#!">
                   <svg class="symbol catalog__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-                    <use xlink:href="#cart" />
+                    <use xlink:href="img/sprite.svg#cart" />
                   </svg>
                 </a>
               </p>
@@ -169,7 +171,7 @@
     </main>
     <footer class="footer">
       <a class="footer__logo">
-        <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+        <img src="img/logo-footer.svg" alt="Логотип - магазин Мишка">
       </a>
       <section class="social footer__social">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
@@ -177,24 +179,24 @@
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Twitter</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#instagram" />
+              <svg class="symbol social__icon" width="22" height="21" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#instagram" />
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в фэйсбук">
               <span class="visually-hidden">Facebook</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#facebook" />
+              <svg class="symbol social__icon" width="15" height="28" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#facebook" />
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Instagram</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#twitter" />
+              <svg class="symbol social__icon" width="23" height="20" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#twitter" />
               </svg>
             </a>
           </li>
@@ -205,7 +207,7 @@
         <p class="copyright__text">Разработано
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="HTML lacademy">
             <svg class="symbol copyright__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#logo-htmlacademy" />
+              <use xlink:href="img/sprite.svg#logo-htmlacademy" />
             </svg>
           </a>
         </p>

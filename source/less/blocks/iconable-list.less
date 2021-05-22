@@ -6,7 +6,7 @@
   }
 
   @media @desktop {
-    padding: 152px 175px 77px;
+    padding: 68px 175px 77px;
   }
 }
 
@@ -31,7 +31,6 @@
     display: grid;
     grid-template-columns: 290px 290px;
     gap: 45px;
-    // padding-right: 40px;
   }
 
   @media @desktop {
@@ -46,20 +45,44 @@
   font-size: 17px;
   line-height: 20px;
 
-  &--wool {
-    background-image: url("iconable-wool.svg");
-  }
-
   &:last-child {
     margin: 0;
   }
 
-  &::before {  // иконки
+  &::before {
     content: "";
     display: block;
     width: 55px;
     height: 38px;
     margin-bottom: 18px;
+    background-color: @color-green;
+    transform: translateX(-5px);
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &--flower::before {
+    mask-image: var(--svg-iconable-flower);
+  }
+
+  &--money::before {
+    mask-image: var(--svg-iconable-money);
+  }
+
+  &--wool::before {
+    mask-image: var(--svg-iconable-wool);
+  }
+
+  &--heart::before {
+    mask-image: var(--svg-iconable-heart);
+  }
+
+  &--rocket::before {
+    mask-image: var(--svg-iconable-rocket);
+  }
+
+  &--present::before {
+    mask-image: var(--svg-iconable-gift);
   }
 
   @media @tablet {

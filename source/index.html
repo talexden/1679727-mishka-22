@@ -3,17 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Главная страница</title>
-    <link rel="stylesheet" href="css/style.css?1621457881559">
-    <link rel="stylesheet" href="css/dev.css?1621457881559">
+    <link rel="stylesheet" href="css/style.css?1621763183364">
+    <link rel="stylesheet" href="css/dev.css?1621763183364">
   </head>
   <body class="page__body">
     <header class="header">
-      <nav class="navigation">
-        <a class="navigation__logo-link" href="index.html">
-          <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
-        </a>
+      <nav class="navigation navigation--opened navigation--nojs">
+        <div class="navigation__logo-wrapper">
+          <a class="navigation__logo-link" href="index.html">
+            <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+          </a>
+        </div>
         <button class="navigation__toggle" type="button">
-          <span class="visually-hidden">Открыть меню</span>
+          <span class="visually-hidden">Открыть/Закрыть меню</span>
         </button>
         <div class="navigation__wrapper">
           <ul class="navigation-primary">
@@ -26,7 +28,7 @@
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#search" />
+                  <use xlink:href="img/sprite.svg#header-search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
               </a>
@@ -34,7 +36,7 @@
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
                 <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
-                  <use xlink:href="#cart" />
+                  <use xlink:href="img/sprite.svg#cart" />
                 </svg>
                 <span class="navigation-primary__text navigation-primary__text--cart">Корзина: пока пуста</span>
               </a>
@@ -60,10 +62,10 @@
         </p>
         <ul class="main-header__list">
           <li class="main-header__item">
-            <a class="main-header__link" href="#!">Предметы<br>интерьера</a>
+            <a class="main-header__link main-header__link--interior" href="#!">Предметы<br>интерьера</a>
           </li>
           <li class="main-header__item">
-            <a class="main-header__link" href="#!">Детские<br>игрушки</a>
+            <a class="main-header__link main-header__link--toy" href="#!">Детские<br>игрушки</a>
           </li>
         </ul>
       </header>
@@ -119,10 +121,10 @@
           <li class="iconable-list__item iconable-list__item--money">
             Скандинавский&nbsp;стиль<br>по&nbsp;российской&nbsp;цене
           </li>
-          <li class="iconable-list__item iconable-list__item--wool">
+          <li class="iconable-list__item iconable-list__item--heart">
             Увеличивает&nbsp;лайки<br>на&nbsp;фотографиях
           </li>
-          <li class="iconable-list__item iconable-list__item--heart">
+          <li class="iconable-list__item iconable-list__item--wool">
             Связано&nbsp;вручную<br>с любовью&nbsp;и умилением
           </li>
           <li class="iconable-list__item iconable-list__item--rocket">
@@ -148,7 +150,7 @@
             </li>
           </ul>
           <div class="slider__navigation">
-            <button class="slider__button slider__button--previous" type="button">
+            <button class="slider__button" type="button">
               <span class="visually-hidden">Предыдущий отзыв</span>
             </button>
             <button class="slider__button slider__button--next" type="button">
@@ -176,7 +178,9 @@
             </td>
           </tr>
         </table>
-        <img class="contacts__map-image" src="img/map-mobile.jpg" width="320" height="455" alt="Изображение карты с меткой магазина">
+        <div class="contacts__map-wrapper">
+          <img class="contacts__map-image" src="img/map-mobile.jpg" width="320" height="455" alt="Изображение карты с меткой магазина">
+        </div>
         <div class="contacts__button-wrapper">
           <a class="button contacts__button" href="#!">Напишите нам</a>
         </div>
@@ -184,7 +188,7 @@
     </main>
     <footer class="footer">
       <a class="footer__logo">
-        <img src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+        <img src="img/logo-footer.svg" alt="Логотип - магазин Мишка">
       </a>
       <section class="social footer__social">
         <h2 class="visually-hidden">Мы в социальных сетях</h2>
@@ -192,24 +196,24 @@
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Twitter</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#instagram" />
+              <svg class="symbol social__icon" width="22" height="21" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#instagram" />
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в фэйсбук">
               <span class="visually-hidden">Facebook</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#facebook" />
+              <svg class="symbol social__icon" width="15" height="28" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#facebook" />
               </svg>
             </a>
           </li>
           <li class="social__item">
             <a class="social__button" href="#!" aria-label="магазин Мишка в инстаграм">
               <span class="visually-hidden">Instagram</span>
-              <svg class="symbol social__icon" width="29" height="29" xmlns="http://www.w3.org/2000/svg">
-                <use xlink:href="#twitter" />
+              <svg class="symbol social__icon" width="23" height="20" xmlns="http://www.w3.org/2000/svg">
+                <use xlink:href="img/sprite.svg#twitter" />
               </svg>
             </a>
           </li>
@@ -220,7 +224,7 @@
         <p class="copyright__text">Разработано
           <a class="copyright__link" href="https://htmlacademy.ru/intensive/htmlcss" aria-label="HTML lacademy">
             <svg class="symbol copyright__icon" width="27" height="34" xmlns="http://www.w3.org/2000/svg">
-              <use xlink:href="#logo-htmlacademy" />
+              <use xlink:href="img/sprite.svg#logo-htmlacademy" />
             </svg>
           </a>
         </p>

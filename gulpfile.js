@@ -162,7 +162,7 @@ const reload = (done) => {
 const watcher = () => {
   gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
   gulp.watch("source/less/**/*.less", gulp.series(stylesTasks, reload));
-  gulp.watch("source/img/icons/**/*.svg", gulp.series(iconsmin, gulp.parallel(styles, spriteBuild), reload));
+  gulp.watch("source/img/icons/**/*.svg", gulp.series(gulp.parallel(styles, spriteBuild), reload));
 };
 
 exports.test = gulp.parallel(htmlTest, stylesTest);
