@@ -4,6 +4,15 @@
   }
 }
 
+.navigation__wrapper {
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 var(--full-width-margin);
+    background-color: @color-basic-gray;
+  }
+}
+
 .navigation__logo-wrapper {
   margin: 0 -30px;
   padding: 0 30px;
@@ -52,12 +61,16 @@
   @media @tablet {
     position: absolute;
     right: 0;
-    bottom: 23px;
+    bottom: 9px;
     display: block;
-    margin: 0;
     font-size: 15px;
     line-height: 24px;
     color: @color-native-black;
+  }
+
+  @media @desktop {
+    position: static;
+    margin: 20px 50px 0 auto;
   }
 }
 

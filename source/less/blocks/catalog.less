@@ -123,6 +123,7 @@
 }
 
 .catalog__card-price {
+  position: relative;
   margin: 0;
   padding: 22px 0 0;
   font-weight: bold;
@@ -138,4 +139,17 @@
 
 .catalog__popup-link {
   position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 20%;
+
+  &:hover,
+  &:focus {
+    color: @color-green;
+    opacity: 100%;
+  }
+
+  &:active {
+    opacity: 30%;
+  }
 }
