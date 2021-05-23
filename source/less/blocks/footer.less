@@ -16,5 +16,16 @@
 
   @media @tablet {
     display: block;
+    filter: grayscale(100%) brightness(0%);
+  }
+
+  &:hover,
+  &:focus {
+    filter: none;
+  }
+
+  &:active {
+    opacity: 30%;
+    filter: none;
   }
 }

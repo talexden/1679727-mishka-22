@@ -15,17 +15,53 @@
 
   @media @tablet {
     position: absolute;
-    right: 19px;
-    min-width: 137px;
+    right: 3px;
+    min-width: 164px;
     height: auto;
     min-height: 26px;
     margin: 0;
-    transform: translateY(-40px);
+    transform: translateY(-42px);
+  }
+
+  @media @desktop {
+    min-width: 167px;
   }
 }
 
 .slider__button {
   width: 50%;
+  background: none;
+
+
+  &::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 26px;
+    margin: auto;
+    background-color: @color-black;
+    transform: translateX(-5px);
+    mask-image: var(--svg-huge-arrow-left);
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  &--next::before {
+    transform: rotate(180deg);
+  }
+
+  &:hover,
+  &:focus {
+    &::before {
+      opacity: 60%;
+    }
+  }
+
+  &:active {
+    &::before {
+      opacity: 30%;
+    }
+  }
 
   @media @tablet {
     margin: 0;

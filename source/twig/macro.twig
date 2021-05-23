@@ -1,5 +1,5 @@
 {% macro symbol(id, width, height, class = '') %}
   <svg class="symbol {{ class }}" width="{{ width }}" height="{{ height }}" xmlns="http://www.w3.org/2000/svg">
-    <use xlink:href="#{{ id }}" />
+    <use xlink:href="{{ root }}img/sprite.svg#{{ id }}" />
   </svg>
 {% endmacro %}

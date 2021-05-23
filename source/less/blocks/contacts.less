@@ -3,25 +3,26 @@
 
   @media @tablet {
     position: relative;
-    padding: 154px 0 57px;
+    padding: 67px 0 57px;
     line-height: 50px;
 
     &::before {
       content: ""; // флаг
       position: absolute;
-      top: 131px;
+      top: 44px;
       right: 3px;
       display: block;
       width: 47px;
       height: 81px;
+      background-image: url("../img/icons/flag.svg");
     }
   }
 
   @media @desktop {
-    padding: 242px 175px 105px;
+    padding: 150px 175px 105px;
 
     &::before {
-      top: 225px;
+      top: 133px;
       left: 63px;
     }
   }
@@ -87,16 +88,37 @@
 }
 
 .contacts__link {
-  border-bottom: 1px solid @color-greeny;
+  border-bottom: @border-greeny;
+
+  &:hover,
+  &:focus {
+    color: @color-darky-green;
+  }
+
+  &:active {
+    color: @color-darky-green;
+    border-color: fade(@color-darky-green, 10%);
+  }
 }
 
-.contacts__map-image {
-  display: block;
+.contacts__map-wrapper {
+  position: relative;
   min-width: var(--full-width);
   height: 454px;
   margin: 0 -30px 42px -30px;
-  object-fit: cover;
-  background-color: @color-basic-gray;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 67px;
+    height: 100px;
+    background-image: var(--svg-map-pin);
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+  }
 
   @media @tablet {
     height: 457px;
@@ -105,12 +127,20 @@
 
   @media @desktop {
     position: absolute;
-    top: 160px;
+    top: 70px;
     right: 0;
-    width: 50%;
+    box-sizing: border-box;
+    width: 527px;
     min-width: auto;
-    margin-right: 0;
+    height: 457px;
+    margin: 0;
   }
+}
+
+.contacts__map-image {
+  display: block;
+  object-fit: cover;
+  background-color: @color-basic-gray;
 }
 
 .contacts__button-wrapper {

@@ -3,14 +3,32 @@
   --switched-color-grayny: #ececec;
   --full-width: calc(100% + 60px);
 
+  --svg-huge-arrow-left: url("huge-arrow-left.svg");
+  --svg-main-header-interior: url("main-header-interior.svg");
+  --svg-main-header-toy: url("main-header-toy.svg");
+  --svg-iconable-flag: url("iconable-flag.svg");
+  --svg-iconable-flower: url("iconable-flower.svg");
+  --svg-iconable-gift: url("iconable-gift.svg");
+  --svg-iconable-heart: url("iconable-heart.svg");
+  --svg-iconable-money: url("iconable-money.svg");
+  --svg-iconable-gift: url("iconable-gift.svg");
+  --svg-iconable-rocket: url("iconable-rocket.svg");
+  --svg-iconable-wool: url("iconable-wool.svg");
+  --svg-map-pin: url("map-pin.svg");
+  --svg-menu-close: url("menu-close.svg");
+  --svg-zigzag-line: url("zigzag-line.svg");
+  --svg-zigzag-fill: url("zigzag-fill.svg");
+
   @media @tablet {
     --switched-color-grayny: #e6e6e6;
     --full-width: calc(100% + 100px);
+    --padding: calc((100vw - 100%) * 0.5);
+    --margin: calc(var(--padding) * -1);
   }
 
   @media @desktop {
-    --padding: calc((100vw - 1050px ) * 0.5);
-    --margin: calc(-1 * var(--padding));
+    // --padding: 50vw;
+    // --margin: -50vw;
   }
 }
 
@@ -19,9 +37,11 @@
 @color-basic-gray: #f9f9f9;
 @color-gray: #e5e5e5;
 @color-grayny: #ececec;
+@color-light-green: #59d5bc;
 @color-green: #63d1bb;
 @color-greeny: #62d1ba;
 @color-dark-green: #56c3b2;
+@color-darky-green: #46c1ae;
 @color-dark-greeny: #149080;
 @color-native-black: #444444;
 @color-dark-brown: #231f20;
@@ -32,6 +52,6 @@
 @border-greeny: 1px solid @color-greeny;
 @border-black-thick: 2px solid @color-native-black;
 
-@tablet: (min-width: 768px);
-@desktop: (min-width: 1150px);
-@mobile: (max-width: 767px);
+@tablet: ~"(min-width: 768px)";
+@desktop: ~"(min-width: 1150px)";
+@mobile: ~"(max-width: 767px)";
