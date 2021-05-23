@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Вязание на заказ</title>
-    <link rel="stylesheet" href="css/style.css?1621763183343">
-    <link rel="stylesheet" href="css/dev.css?1621763183343">
+    <link rel="stylesheet" href="css/style.css?1621799351266">
+    <link rel="stylesheet" href="css/dev.css?1621799351266">
   </head>
   <body class="page__body">
     <header class="header">
@@ -27,7 +27,7 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                <svg class="symbol navigation-primary__icon" width="18" height="18" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#header-search" />
                 </svg>
                 <span class="navigation-primary__text">Поиск по сайту</span>
@@ -35,7 +35,7 @@
             </li>
             <li class="navigation-primary__item">
               <a class="navigation-primary__link" href="blank.html">
-                <svg class="symbol navigation-primary__icon" width="21" height="21" xmlns="http://www.w3.org/2000/svg">
+                <svg class="symbol navigation-primary__icon" width="21" height="18" xmlns="http://www.w3.org/2000/svg">
                   <use xlink:href="img/sprite.svg#cart" />
                 </svg>
                 <span class="navigation-primary__text navigation-primary__text--cart">Корзина: пока пуста</span>
@@ -127,48 +127,42 @@
           </fieldset>
         </div>
         <div class="form__group">
-          <fieldset class="form__set form__set--input-text">
+          <fieldset class="form__set form__set--input-name">
             <legend class="form__set-legend">
               <span class="form__set-heading">ФИО</span>
             </legend>
-            <label class="form__label form__label--input">
+            <label class="form__label form__label--input form__label--input-name">
               Имя:
               <input class="form__field" type="text" name="name" placeholder="Введите ваше имя*" required>
             </label>
-            <label class="form__label form__label--input">
+            <label class="form__label form__label--input form__label--input-name">
               Фамилия:
               <input class="form__field" type="text" name="surname" placeholder="Укажите фамилию*" required>
             </label>
-            <label class="form__label form__label--input">
+            <label class="form__label form__label--input form__label--input-name">
               Отчество:
               <input class="form__field" type="text" name="patronymic" placeholder="Отчество, если желаете">
             </label>
           </fieldset>
         </div>
         <div class="form__group form__group--contacts">
-          <fieldset class="form__set form__set--input-tel">
-            <legend class="form__set-legend">
-              <span class="form__set-heading form__set-heading--input-tel">Тел</span>
-            </legend>
-            <label class="form__label form__label--input">
+          <fieldset class="form__set form__set--input">
+            <label class="form__label form__label--input form__label--input-tel">
+              <span class="form__set-heading form__set-heading--input">Тел</span>
               <input class="form__field" type="tel" name="tel" pattern="\+\d{1,3} \d{3} \d{3} \d{2} \d{2}" placeholder="+7 ХХХ ХХХ ХХ ХХ*" required>
             </label>
           </fieldset>
-          <fieldset class="form__set form__set--input-email">
-            <legend class="form__set-legend">
-              <span class="form__set-heading form__set-heading--input-email">E-mail</span>
-            </legend>
-            <label class="form__label form__label--input">
+          <fieldset class="form__set form__set--input">
+            <label class="form__label form__label--input form__label--input-mail">
+              <span class="form__set-heading form__set-heading--input">E-mail</span>
               <input class="form__field" type="email" name="email" placeholder="Ваш Email*" required>
             </label>
           </fieldset>
         </div>
         <div class="form__group">
           <fieldset class="form__set form__set--textarea">
-            <legend class="form__set-legend">
-              <span class="form__set-heading">Доп</span>
-            </legend>
-            <label class="form__label" aria-label="Дополнительные комментарии">
+            <label class="form__label form__label--textarea" aria-label="Дополнительные комментарии">
+              <span class="form__set-heading form__set-heading--textarea">Доп</span>
               <textarea class="form__field form__field--textarea" name="textarea" placeholder="Опишите все ваши пожелания к заказу"></textarea>
             </label>
           </fieldset>
