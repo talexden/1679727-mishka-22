@@ -55,26 +55,26 @@
   }
 
   &--radio {
-    padding: 35px 0 19px;
+    padding: 20px 0 32px;
 
     @media @tablet {
-      padding: 67px 60px 7px 247px;
+      padding: 50px 0 24px 170px;
     }
 
     @media @desktop {
-      padding: 67px 60px 7px 255px;
+      padding: 50px 60px 24px 176px;
     }
   }
 
   &--checkbox {
-    padding: 35px 0 0;
+    padding: 20px 0 16px;
 
     @media @tablet {
-      padding: 66px 10px 25px 249px;
+      padding: 49px 20px 49px 166px;
     }
 
     @media @desktop {
-      padding: 66px 60px 25px 257px;
+      padding: 48px 60px 50px 175px;
     }
   }
 
@@ -171,7 +171,7 @@
 
 .form__list {
   margin: 0;
-  padding-left: 60px;
+  padding: 0;
   list-style: none;
 
   @media @tablet {
@@ -182,8 +182,8 @@
     @media @tablet {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 113px;
-      row-gap: 15px;
+      column-gap: 42px;
+      row-gap: 22px;
     }
 
     @media @desktop {
@@ -205,73 +205,44 @@
   }
 
   &--radio {
-    margin-bottom: 24px;
+    padding: 15px 20px 10px 61px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -11px;
-      left: -59px;
-      width: 36px;
-      height: 36px;
-      border: @border-black-thick;
-      border-radius: 50%;
-
-      @media @tablet {
-        top: -18px;
-        left: -77px;
-        width: 46px;
-        height: 46px;
-      }
+    @media @tablet {
+      padding: 15px 20px 43px 77px;
     }
 
     &:hover,
     &:focus {
-      &::before {
+      .form__check {
         border-color: @color-greeny;
       }
     }
 
     &:active {
-      &::before {
+      .form__check {
         border-color: fade(@color-native-black, 30%);
       }
-    }
-
-    @media @tablet {
-      margin-bottom: 58px;
     }
   }
 
   &--checkbox {
-    margin-bottom: 43px;
+    margin-bottom: 13px;
+    padding: 15px 20px 15px 61px;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: -59px;
-      width: 34px;
-      height: 34px;
-      border: @border-black-thick;
-
-      @media @tablet {
-        top: -16px;
-        left: -82px;
-        width: 48px;
-        height: 48px;
-      }
+    @media @tablet {
+      margin: 0;
+      padding: 18px 0 18px 82px;
     }
 
     &:hover,
     &:focus {
-      &::before {
+      .form__check {
         border-color: @color-greeny;
       }
     }
 
     &:active {
-      &::before {
+      .form__check {
         border-color: fade(@color-native-black, 30%);
       }
     }
@@ -361,53 +332,75 @@
   appearance: none;
 
   &--radio {
-    top: -12px;
-    left: -60px;
+    top: 3px;
+    left: 0;
     width: 42px;
     height: 42px;
+    border: @border-black-thick;
+    border-radius: 50%;
 
     @media @tablet {
-      top: -18px;
-      left: -77px;
+      top: 0;
+      left: 0;
       width: 50px;
       height: 50px;
     }
 
     &:checked {
-      background-color: @color-greeny;
-      mask-image: var(--svg-radio-center);
-      mask-size: 17px 17px;
-      mask-repeat: no-repeat;
-      mask-position: center;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 11px;
+        left: 11px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-color: @color-greeny;
+        border: 1px transparent;
+        border-radius: 50%;
 
-      @media @tablet {
-        mask-size: 20px 20px;
+        @media @tablet {
+          top: 12px;
+          left: 13px;
+          width: 20px;
+          height: 20px;
+        }
       }
     }
   }
 
   &--checkbox {
-    top: -10px;
-    left: -59px;
+    top: 5px;
+    left: 1px;
     width: 38px;
     height: 38px;
+    border: @border-black-thick;
 
     @media @tablet {
-      top: -16px;
-      left: -82px;
+      top: 0;
+      left: 0;
       width: 52px;
       height: 52px;
     }
 
     &:checked {
-      background-color: @color-black;
-      mask-image: var(--svg-checkbox-tick);
-      mask-size: auto 16px;
-      mask-repeat: no-repeat;
-      mask-position: center;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: inherit;
+        height: inherit;
+        background-color: @color-black;
+        mask-image: var(--svg-checkbox-tick);
+        mask-size: auto 16px;
+        mask-repeat: no-repeat;
+        mask-position: center;
 
-      @media @tablet {
-        mask-size: auto 21px;
+        @media @tablet {
+          mask-size: auto 22px;
+        }
       }
     }
   }
@@ -455,8 +448,8 @@
   @media @tablet {
     &:nth-child(odd) {
       margin: 0 var(--full-width-margin);
-      padding-right: var(--full-width-padding);
-      padding-left: var(--full-width-padding);
+      padding-right: 50px;
+      padding-left: 50px;
       background-color: @color-light-gray;
     }
 
