@@ -66,10 +66,27 @@
 
 @retina: ~"only screen and (min-resolution: 144dpi), only screen and (min-resolution: 1.5dppx)";
 
-// .background-image (@pict, @ext) {
-//   background-image: url("../img/@{pict}.@{ext}");
+.background-image (@pict, @ext) {
+  background-image: url("../img/@{pict}-mobile.@{ext}");
 
-//   @media @retina {
-//     background-image: url("../img/@{pict}@2x.@{ext}");
-//   }
-// }
+  @media @tablet {
+    background-image: url("../img/@{pict}-tablet.@{ext}");
+  }
+
+  @media @desktop {
+    background-image: url("../img/@{pict}-desktop.@{ext}");
+  }
+
+  @media @retina {
+    background-image: url("../img/@{pict}@2x.@{ext}");
+    background-size: 100%;
+
+    @media @tablet {
+      background-image: url("../img/@{pict}-tablet@2x.@{ext}");
+    }
+
+    @media @desktop {
+      background-image: url("../img/@{pict}-desktop@2x.@{ext}");
+    }
+  }
+}
