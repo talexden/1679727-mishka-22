@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Главная страница</title>
-    <link rel="stylesheet" href="css/style.css?1621814202845">
-    <link rel="stylesheet" href="css/dev.css?1621814202845">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/180.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?1621882652318">
+    <link rel="stylesheet" href="css/dev.css?1621882652318">
   </head>
   <body class="page__body">
     <header class="header">
       <nav class="navigation navigation--opened navigation--nojs">
         <div class="navigation__logo-wrapper">
           <a class="navigation__logo-link" href="index.html">
-            <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+            <picture>
+              <source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg">
+              <source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg">
+              <img class="img navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+            </picture>
           </a>
         </div>
         <button class="navigation__toggle" type="button">
@@ -88,7 +98,11 @@
               <td class="promotion__table-data">15 см</td>
             </tr>
           </table>
-          <img class="promotion__image" src="img/triple-set-mobile.jpg" width="260" height="315" alt="Три вязаные корзинки разного цвета и размера">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/triple-set-desktop.jpg 1x, img/triple-set-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/triple-set-tablet.jpg 1x, img/triple-set-tablet@2x.jpg 2x">
+            <img class="img promotion__image" src="img/triple-set-mobile.jpg" srcset="img/triple-set-mobile@2x.jpg 2x" alt="Три вязаные корзинки разного цвета и размера">
+          </picture>
           <p class="promotion__cost">Цена: 990 руб.</p>
           <a class="button promotion__button" href="#!">Заказать</a>
         </div>
@@ -179,7 +193,11 @@
           </tr>
         </table>
         <div class="contacts__map-wrapper">
-          <img class="contacts__map-image" src="img/map-mobile.jpg" width="320" height="455" alt="Изображение карты с меткой магазина">
+          <picture>
+            <source media="(min-width: 1150px)" srcset="img/map-desktop.jpg 1x, img/map-desktop@2x.jpg 2x">
+            <source media="(min-width: 768px)" srcset="img/map-tablet.jpg 1x, img/map-tablet@2x.jpg 2x">
+            <img class="img contacts__map-image" src="img/map-mobile.jpg" srcset="img/map-mobile@2x.jpg 2x" alt="Изображение карты с меткой магазина">
+          </picture>
         </div>
         <div class="contacts__button-wrapper">
           <a class="button contacts__button" href="#!">Напишите нам</a>

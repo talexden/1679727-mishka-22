@@ -66,10 +66,20 @@
   background-repeat: no-repeat;
   background-size: cover;
 
+  @media @retina {
+    background-image: url("../img/video-mobile@2x.jpg");
+    background-size: 260px 150px;
+  }
+
   @media @tablet {
     order: -1;
     min-height: 455px;
     background-image: url("../img/video-tablet.jpg");
+
+    @media @retina {
+      background-image: url("../img/video-tablet@2x.jpg");
+      background-size: 668px 455px;
+    }
   }
 
   @media @desktop {
@@ -79,6 +89,11 @@
     width: 683px;
     height: 455px;
     background-image: url("../img/video-desktop.jpg");
+
+    @media @retina {
+      background-image: url("../img/video-desktop@2x.jpg");
+      background-size: 668px 455px;
+    }
   }
 }
 
