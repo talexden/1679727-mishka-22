@@ -4,35 +4,38 @@
   --full-width: calc(100% + 60px);
 
   --svg-checkbox-tick: url("checkbox-tick.svg");
-  --svg-mail: url("mail.svg");
+  --svg-flag: url("flag.svg");
   --svg-huge-arrow-left: url("huge-arrow-left.svg");
+  --svg-icon-flag: url("icon-flag.svg");
+  --svg-icon-flower: url("icon-flower.svg");
+  --svg-icon-gift: url("icon-gift.svg");
+  --svg-icon-heart: url("icon-heart.svg");
+  --svg-icon-money: url("icon-money.svg");
+  --svg-icon-gift: url("icon-gift.svg");
+  --svg-icon-rocket: url("icon-rocket.svg");
+  --svg-icon-wool: url("icon-wool.svg");
+  --svg-mail: url("mail.svg");
   --svg-main-header-interior: url("main-header-interior.svg");
   --svg-main-header-toy: url("main-header-toy.svg");
-  --svg-iconable-flag: url("iconable-flag.svg");
-  --svg-iconable-flower: url("iconable-flower.svg");
-  --svg-iconable-gift: url("iconable-gift.svg");
-  --svg-iconable-heart: url("iconable-heart.svg");
-  --svg-iconable-money: url("iconable-money.svg");
-  --svg-iconable-gift: url("iconable-gift.svg");
-  --svg-iconable-rocket: url("iconable-rocket.svg");
-  --svg-iconable-wool: url("iconable-wool.svg");
   --svg-map-pin: url("map-pin.svg");
   --svg-menu-close: url("menu-close.svg");
   --svg-phone: url("phone.svg");
+  --svg-play: url("play.svg");
   --svg-radio-center: url("radio-center.svg");
+  --svg-video: url("video.svg");
   --svg-zigzag-line: url("zigzag-line.svg");
   --svg-zigzag-fill: url("zigzag-fill.svg");
 
   @media @tablet {
     --switched-color-grayny: #e6e6e6;
     --full-width: calc(100% + 100px);
-    --padding: calc((100vw - 100%) * 0.5);
-    --margin: calc(var(--padding) * -1);
+    --full-width-padding: calc((100vw - 100%) * 0.5);
+    --full-width-margin: calc(var(--full-width-padding) * -1);
   }
 
   @media @desktop {
-    // --padding: 50vw;
-    // --margin: -50vw;
+    // --full-width-padding: 50vw;
+    // --full-width-margin: -50vw;
   }
 }
 
@@ -55,6 +58,7 @@
 @border-grayny: 1px solid @color-grayny;
 @border-greeny: 1px solid @color-greeny;
 @border-black-thick: 2px solid @color-native-black;
+@border-white-fat-thick: 4px solid @color-white;
 
 @tablet: ~"(min-width: 768px)";
 @desktop: ~"(min-width: 1150px)";
