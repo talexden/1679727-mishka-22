@@ -8,6 +8,9 @@
 
 {% macro picture(name = '', ext = '', class = '', alt = '') %}
   <picture>
+    <source type="image/webp" media="(min-width: 1150px)" srcset="{{ root }}img/{{ name }}-desktop.webp 1x, {{ root }}img/{{ name }}-desktop@2x.webp 2x">
+    <source type="image/webp" media="(min-width: 768px)" srcset="{{ root }}img/{{ name }}-tablet.webp 1x, {{ root }}img/{{ name }}-tablet@2x.webp 2x">
+    <source type="image/webp" srcset="{{ root }}img/{{ name }}-mobile.webp 1x, {{ root }}img/{{ name }}-mobile@2x.webp 2x">
     <source media="(min-width: 1150px)" srcset="{{ root }}img/{{ name }}-desktop.{{ ext }} 1x, {{ root }}img/{{ name }}-desktop@2x.{{ ext }} 2x">
     <source media="(min-width: 768px)" srcset="{{ root }}img/{{ name }}-tablet.{{ ext }} 1x, {{ root }}img/{{ name }}-tablet@2x.{{ ext }} 2x">
     <img class="img {{ class }}" src="{{ root }}img/{{ name }}-mobile.{{ ext }}" srcset="{{ root }}img/{{ name }}-mobile@2x.{{ ext }} 2x" alt="{{ alt }}">
