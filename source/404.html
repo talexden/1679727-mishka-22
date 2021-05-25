@@ -3,15 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Мишка: Страница не найдена</title>
-    <link rel="stylesheet" href="css/style.css?1621822146637">
-    <link rel="stylesheet" href="css/dev.css?1621822146637">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="img/favicons/180.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?1621965816254">
+    <link rel="stylesheet" href="css/dev.css?1621965816254">
   </head>
   <body class="page__body">
     <header class="header">
       <nav class="navigation navigation--opened navigation--nojs">
         <div class="navigation__logo-wrapper">
           <a class="navigation__logo-link" href="index.html">
-            <img class="navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+            <picture>
+              <source media="(min-width: 1150px)" srcset="img/mishka-logo-desktop.svg">
+              <source media="(min-width: 768px)" srcset="img/mishka-logo-tablet.svg">
+              <img class="img navigation__logo-image" src="img/mishka-logo-mobile.svg" alt="Логотип - магазин Мишка">
+            </picture>
           </a>
         </div>
         <button class="navigation__toggle" type="button">

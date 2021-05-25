@@ -44,6 +44,7 @@
 @color-basic-gray: #f9f9f9;
 @color-gray: #e5e5e5;
 @color-grayny: #ececec;
+@color-dark-gray: #c6c6c6;
 @color-light-green: #59d5bc;
 @color-green: #63d1bb;
 @color-greeny: #62d1ba;
@@ -56,6 +57,7 @@
 
 @border-switched-grayny: 1px solid var(--switched-color-grayny);
 @border-grayny: 1px solid @color-grayny;
+@border-dark-gray: 1px solid @color-dark-gray;
 @border-greeny: 1px solid @color-greeny;
 @border-black-thick: 2px solid @color-native-black;
 @border-white-fat-thick: 4px solid @color-white;
@@ -63,3 +65,30 @@
 @tablet: ~"(min-width: 768px)";
 @desktop: ~"(min-width: 1150px)";
 @mobile: ~"(max-width: 767px)";
+
+@retina: ~"(min-resolution: 144dpi) and (min-resolution: 1.5dppx)";
+
+.background-image (@pict, @ext) {
+  background-image: url("../img/@{pict}-mobile.@{ext}");
+
+  @media @tablet {
+    background-image: url("../img/@{pict}-tablet.@{ext}");
+  }
+
+  @media @desktop {
+    background-image: url("../img/@{pict}-desktop.@{ext}");
+  }
+
+  @media @retina {
+    background-image: url("../img/@{pict}@2x.@{ext}");
+    background-size: 100%;
+
+    @media @tablet {
+      background-image: url("../img/@{pict}-tablet@2x.@{ext}");
+    }
+
+    @media @desktop {
+      background-image: url("../img/@{pict}-desktop@2x.@{ext}");
+    }
+  }
+}
