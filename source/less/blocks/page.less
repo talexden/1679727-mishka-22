@@ -12,8 +12,9 @@
 
   @media @tablet {
     display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    height: 100vh; // не корректно работает PP
     padding: 0 50px;
-    // height: 100vh; // не корректно работает PP
     overflow-x: hidden;
   }
 
