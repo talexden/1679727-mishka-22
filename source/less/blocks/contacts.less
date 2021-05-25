@@ -136,6 +136,10 @@
   min-width: var(--full-width);
   height: 454px;
   margin: 0 -30px 42px -30px;
+  background-color: @color-basic-gray;
+  .background-image (map, jpg);
+  background-repeat: no-repeat;
+  background-position: 50%;
 
   &::after {
     content: "";
@@ -182,8 +186,11 @@
 }
 
 .contacts__map-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   display: block;
-  // object-fit: cover;
+  object-fit: cover;
   background-color: @color-basic-gray;
 }
 
