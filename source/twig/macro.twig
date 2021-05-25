@@ -27,11 +27,18 @@
       <img class="img {{ class }}" src="{{ pathPrefix }}-mobile.{{ ext }}" alt="{{ alt }}">
     {% else %}
       <source media="(min-width: 1150px)"
+        srcset="{{ pathPrefix }}-desktop.webp 1x, {{ pathPrefix }}-desktop@2x.webp 2x">
+      <source media="(min-width: 768px)"
+        srcset="{{ pathPrefix }}-tablet.webp 1x, {{ pathPrefix }}-tablet@2x.webp 2x">
+      <source media="(min-width: 768px)"
+        srcset="{{ pathPrefix }}-mobile.webp 1x, {{ pathPrefix }}-mobile@2x.webp 2x">
+      <source media="(min-width: 1150px)"
         srcset="{{ pathPrefix }}-desktop.{{ ext }} 1x, {{ pathPrefix }}-desktop@2x.{{ ext }} 2x">
       <source media="(min-width: 768px)"
         srcset="{{ pathPrefix }}-tablet.{{ ext }} 1x, {{ pathPrefix }}-tablet@2x.{{ ext }} 2x">
       <img class="img {{ class }}" src="{{ pathPrefix }}-mobile.{{ ext }}"
-        srcset="{{ path }}-mobile@2x.{{ ext }} 2x" alt="{{ alt }}">
+        srcset="{{ pathPrefix }}-mobile@2x.{{ ext }} 2x" alt="{{ alt }}">
+
     {% endif %}
   </picture>
 {% endmacro %}
