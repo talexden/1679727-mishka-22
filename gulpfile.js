@@ -17,7 +17,10 @@ const svgstore = require("gulp-svgstore");
 const rename = require("gulp-rename");
 const cssBase64 = require("gulp-css-base64");
 const webp = require("gulp-webp");
-const cssnano = require('cssnano');
+const cssnano = require("cssnano");
+const htmlmin = require("gulp-htmlmin");
+const terser = require("terser");
+const gulpTerser = require("gulp-terser");
 
 const { IS_DEV, IS_OFFLINE } = process.env;
 const SVGO_PLUGINS_CONFIG = {
@@ -81,7 +84,8 @@ const htmlBuild = () => {
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator()))
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator.reporter()))
     .pipe(gulp.dest("build"))
-    // .pipe(sync.stream());
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
 };
 
 const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
@@ -142,11 +146,11 @@ const server = (done) => {
 
 
 // Сборка спрайта
-const iconsmin = () => gulp.src("source/img/icons/**/*.svg")
+// const iconsmin = () => gulp.src("source/img/icons/**/*.svg")
+//   .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
+  // .pipe(gulp.dest("build/img/icons"));
+const spriteBuild = () => gulp.src("source/img/icons/**/*.svg")
   .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
-  .pipe(gulp.dest("build/img/icons"));
-
-const spriteBuild = () => gulp.src("build/img/icons/**/*.svg")
   .pipe(svgstore({
     inlineSvg: true
   }))
@@ -166,7 +170,25 @@ const watcher = () => {
   gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
   gulp.watch("source/less/**/*.less", gulp.series(stylesTasks, reload));
   gulp.watch("source/img/icons/**/*.svg", gulp.series(gulp.parallel(styles, spriteBuild), reload));
+  gulp.watch("source/js/**/*.js", gulp.series("script:lint", testerJs, reload));
 };
+
+
+// JS
+const testerJs = () => {
+  return gulp.src("source/js/**/*.js")
+    .pipe(gulpTerser({}, terser.minify))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("build/js"));
+};
+
+gulp.task("script:lint", function () {
+  return gulp.src("source/js/**/*.js")
+    .pipe(editorconfig({
+      editorconfig: ".editorconfig"
+    }))
+    .pipe(editorconfig.reporter());
+});
 
 
 // Очищаем папку
@@ -190,12 +212,17 @@ exports.images = images;
 
 
 // Копируем файлы
-  const copy = () => {
-  return gulp.src("src/as-is/**/*")
-    .pipe(gulp.dest("build"));
-  };
+const copy = (done) => {
+  gulp.src([
+    "source/as-is/**/*",
+    ], {
+    base: "source/as-is/"
+    })
+    .pipe(gulp.dest("build"))
+  done();
+}
 
 exports.test = gulp.parallel(htmlTest, stylesTest);
-const build = gulp.series(clean, copy, images, iconsmin, gulp.parallel(htmlTasks, stylesTasks, spriteBuild));
+const build = gulp.series(clean, copy, images, gulp.parallel(htmlTasks, stylesTasks, testerJs, spriteBuild));
 exports.build = build;
 exports.default = gulp.series(build, server, watcher);

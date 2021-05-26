@@ -8,9 +8,6 @@
 *.sublime*
 node_modules/
 build/
-as-is/
 npm-debug.*
-source/css/*.css
-source/css/*.map
 Thumbs.db
 pixelperfect/

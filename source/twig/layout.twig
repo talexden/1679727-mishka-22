@@ -40,7 +40,9 @@
     {% include 'partials/footer.twig' %}
 
     {% if IS_DEV %}
-      <script src="{{ root }}js/dev.js"></script>
+      <script src="{{ root }}js/dev.min.js"></script>
     {% endif %}
+
+    {# <script src="js/script.min.js"></script> #}
   </body>
 </html>
