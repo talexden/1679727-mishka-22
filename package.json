@@ -25,6 +25,7 @@
     "gulp-sourcemaps": "3.0.0",
     "gulp-stylelint": "13.0.0",
     "gulp-svgstore": "7.0.1",
+    "gulp-terser": "^2.0.1",
     "gulp-twig": "1.2.0",
     "gulp-w3c-html-validator": "2.0.1",
     "gulp-webp": "^4.0.1",
@@ -32,7 +33,8 @@
     "pre-commit": "1.2.2",
     "stylelint": "13.12.0",
     "stylelint-config-htmlacademy": "0.1.4",
-    "stylelint-order-htmlacademy": "2.0.3"
+    "stylelint-order-htmlacademy": "2.0.3",
+    "terser": "^5.7.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",
