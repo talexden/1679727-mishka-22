@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
-// const sourcemap = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const stylelint = require("gulp-stylelint");
@@ -17,6 +16,8 @@ const imagemin = require("gulp-imagemin");
 const svgstore = require("gulp-svgstore");
 const rename = require("gulp-rename");
 const cssBase64 = require("gulp-css-base64");
+const webp = require("gulp-webp");
+const cssnano = require('cssnano');
 
 const { IS_DEV, IS_OFFLINE } = process.env;
 const SVGO_PLUGINS_CONFIG = {
@@ -41,7 +42,6 @@ if (IS_DEV) {
 
 
 // HTML
-
 const htmlTest = () => {
   return gulp.src("source/twig/**/*.twig")
     .pipe(lintspaces({
@@ -80,7 +80,7 @@ const htmlBuild = () => {
     .pipe(htmlhint.reporter())
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator()))
     .pipe(gulpIf(!IS_OFFLINE, htmlValidator.reporter()))
-    .pipe(gulp.dest("source"))
+    .pipe(gulp.dest("build"))
     // .pipe(sync.stream());
 };
 
@@ -88,7 +88,6 @@ const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
 
 
 // Styles
-
 const stylesTest = () => {
   return gulp.src("source/less/**/*.less")
     .pipe(lintspaces({
@@ -107,8 +106,6 @@ const stylesTest = () => {
 
 const styles = () => {
   return gulp.src(stylesEntries)
-    // .pipe(plumber())
-    //.pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
       autoprefixer()
@@ -118,32 +115,23 @@ const styles = () => {
       extensionsAllowed: [".svg", ".png"],
       maxWeightResource: 10000
     }))
-    //.pipe(sourcemap.write("."))
-    .pipe(gulp.dest("source/css"))
+    .pipe(gulp.dest("build/css"))
+    .pipe(postcss([
+      cssnano()
+    ]))
+    .pipe(rename({ suffix: ".min" }))
+    .pipe(gulp.dest("build/css"))
     // .pipe(sync.stream());
 };
 
 const stylesTasks = gulp.parallel(stylesTest, styles);
 
 
-// Сборка спрайта
-const iconsmin = () => gulp.src("source/img/icons/**/*.svg")
-  .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
-  .pipe(gulp.dest("source/img/icons"));
-
-const spriteBuild = () => gulp.src("source/img/icons/**/*.svg")
-  .pipe(svgstore({
-    inlineSvg: true
-  }))
-  .pipe(rename("sprite.svg"))
-  .pipe(gulp.dest("source/img"));
-
-
 // Server
 const server = (done) => {
   sync.init({
     server: {
-      baseDir: "source"
+      baseDir: "build"
     },
     cors: true,
     notify: false,
@@ -152,11 +140,26 @@ const server = (done) => {
   done();
 };
 
+
+// Сборка спрайта
+const iconsmin = () => gulp.src("source/img/icons/**/*.svg")
+  .pipe(imagemin([imagemin.svgo(SVGO_CONFIG)]))
+  .pipe(gulp.dest("build/img/icons"));
+
+const spriteBuild = () => gulp.src("build/img/icons/**/*.svg")
+  .pipe(svgstore({
+    inlineSvg: true
+  }))
+  .pipe(rename("sprite.svg"))
+  .pipe(gulp.dest("build/img"));
+
+
 // Перезагрузка страницы в браузере
 const reload = (done) => {
   sync.reload();
   done();
 };
+
 
 // Watcher
 const watcher = () => {
@@ -165,7 +168,34 @@ const watcher = () => {
   gulp.watch("source/img/icons/**/*.svg", gulp.series(gulp.parallel(styles, spriteBuild), reload));
 };
 
+
+// Очищаем папку
+const del = require("del");
+const clean = () => { return del("build");
+};
+
+
+// Оптимизируем растровые изображения
+const images = () => {
+return gulp.src("source/img/**/*.{jpg,png}")
+.pipe(imagemin([
+  imagemin.mozjpeg({quality: 75, progressive: true}),
+  imagemin.optipng({optimizationLevel: 3}),
+]))
+.pipe(gulp.dest("build/img"))
+.pipe(webp({quality: 75}))
+.pipe(gulp.dest("build/img"))
+}
+exports.images = images;
+
+
+// Копируем файлы
+  const copy = () => {
+  return gulp.src("src/as-is/**/*")
+    .pipe(gulp.dest("build"));
+  };
+
 exports.test = gulp.parallel(htmlTest, stylesTest);
-const build = gulp.series(iconsmin, gulp.parallel(htmlTasks, stylesTasks, spriteBuild));
+const build = gulp.series(clean, copy, images, iconsmin, gulp.parallel(htmlTasks, stylesTasks, spriteBuild));
 exports.build = build;
 exports.default = gulp.series(build, server, watcher);
