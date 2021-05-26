@@ -1,0 +1,8 @@
+{
+  "name": "Mishka",
+  "short_name": "Mishka",
+  "icons": [
+    { "src": "favicons/192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "favicons/512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
