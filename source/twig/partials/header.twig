@@ -1,7 +1,7 @@
 <header class="header">
   <nav class="navigation navigation--opened navigation--nojs">
     <div class="navigation__logo-wrapper">
-      <a class="navigation__logo-link">
+      <a class="navigation__logo-link" {{ page != 'index' ? 'href="index.html"' }}>
         {# {{ picture('mishka-logo', 'svg', 'navigation__logo-image', 'Логотип - магазин Мишка') }} #}
         <picture>
           <source class="img navigation__logo-image" media="(min-width: 1150px)" srcset="img/icons/mishka-logo-desktop.svg">
