@@ -41,7 +41,8 @@
   }
 
   @media @tablet {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 0;
   }
 
@@ -59,10 +60,6 @@
   display: block;
   width: 100%;
   object-fit: cover;
-
-  @media @desktop {  // Remove me!!!
-    height: 462px;
-  }
 }
 
 .catalog__card-wrapper {
@@ -139,8 +136,8 @@
 
 .catalog__popup-link {
   position: absolute;
+  top: 22px;
   right: 0;
-  bottom: 0;
   opacity: 20%;
 
   &:hover,

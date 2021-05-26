@@ -1,5 +1,5 @@
 .form {
-  padding: 18px 0 58px;
+  padding: 18px 0 55px;
 
   @media @tablet {
     padding: 53px 0 20px;
@@ -55,7 +55,7 @@
   }
 
   &--radio {
-    padding: 20px 0 32px;
+    padding: 20px 0 14px;
 
     @media @tablet {
       padding: 50px 0 24px 170px;
@@ -106,7 +106,7 @@
     padding: 30px 0 15px;
 
     @media @tablet {
-      padding: 51px 0 20px 167px;
+      padding: 51px 0 23px 167px;
     }
 
     @media @desktop {
@@ -408,6 +408,10 @@
 
 .form__item {
   @media @mobile {
+    &--radio {
+      min-height: 61px;
+    }
+
     &--radio:first-child .form__label::before,
     &--radio:first-child .form__label::after,
     &--radio:first-child .form__check {

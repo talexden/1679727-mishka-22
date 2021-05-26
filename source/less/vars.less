@@ -32,11 +32,6 @@
     --full-width-padding: calc((100vw - 100%) * 0.5);
     --full-width-margin: calc(var(--full-width-padding) * -1);
   }
-
-  @media @desktop {
-    // --full-width-padding: 50vw;
-    // --full-width-margin: -50vw;
-  }
 }
 
 @color-white: #ffffff;
@@ -59,6 +54,7 @@
 @border-grayny: 1px solid @color-grayny;
 @border-dark-gray: 1px solid @color-dark-gray;
 @border-greeny: 1px solid @color-greeny;
+@border-opacity-black: 1px solid fade(@color-black, 10%);
 @border-black-thick: 2px solid @color-native-black;
 @border-white-fat-thick: 4px solid @color-white;
 
