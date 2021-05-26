@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const plumber = require("gulp-plumber");
-// const sourcemap = require("gulp-sourcemaps");
 const less = require("gulp-less");
 const postcss = require("gulp-postcss");
 const stylelint = require("gulp-stylelint");
@@ -43,7 +42,6 @@ if (IS_DEV) {
 
 
 // HTML
-
 const htmlTest = () => {
   return gulp.src("source/twig/**/*.twig")
     .pipe(lintspaces({
@@ -90,7 +88,6 @@ const htmlTasks = gulp.parallel(htmlBuild, htmlTest);
 
 
 // Styles
-
 const stylesTest = () => {
   return gulp.src("source/less/**/*.less")
     .pipe(lintspaces({
@@ -109,8 +106,6 @@ const stylesTest = () => {
 
 const styles = () => {
   return gulp.src(stylesEntries)
-    // .pipe(plumber())
-    //.pipe(sourcemap.init())
     .pipe(less())
     .pipe(postcss([
       autoprefixer()
@@ -120,10 +115,8 @@ const styles = () => {
       extensionsAllowed: [".svg", ".png"],
       maxWeightResource: 10000
     }))
-    //.pipe(sourcemap.write("."))
     .pipe(gulp.dest("build/css"))
     .pipe(postcss([
-      autoprefixer(),
       cssnano()
     ]))
     .pipe(rename({ suffix: ".min" }))
@@ -167,6 +160,7 @@ const reload = (done) => {
   done();
 };
 
+
 // Watcher
 const watcher = () => {
   gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
@@ -179,22 +173,17 @@ const watcher = () => {
 const del = require("del");
 const clean = () => { return del("build");
 };
-exports.clean = clean;
 
 
 // Оптимизируем растровые изображения
 const images = () => {
-return gulp.src("source/img/**/*.{jpg,png,svg}")
-.pipe(webp({quality: 75}))
+return gulp.src("source/img/**/*.{jpg,png}")
 .pipe(imagemin([
   imagemin.mozjpeg({quality: 75, progressive: true}),
   imagemin.optipng({optimizationLevel: 3}),
 ]))
-
-// .pipe(gulpIf(!IS_DEV, imagemin([
-//   imagemin.optipng({optimizationLevel: 3}),
-//   imagemin.mozjpeg({progressive: true})
-// ])))
+.pipe(gulp.dest("build/img"))
+.pipe(webp({quality: 75}))
 .pipe(gulp.dest("build/img"))
 }
 exports.images = images;
