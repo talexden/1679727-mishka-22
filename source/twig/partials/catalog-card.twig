@@ -16,7 +16,12 @@
           <h3 class="catalog__card-heading">Зайчик-попрыгайчик</h3>
         </a>
         <p class="catalog__card-info">Рост 30 см, вес 200 г</p>
-        <p class="catalog__card-price">1 200 руб.{{ cartLink }}</p>
+        <p class="catalog__card-price">
+          1 200 руб.
+          <a class="catalog__popup-link" href="#!" aria-label="Зайчик-попрыгайчик, добавить в список покупок">
+            {{ symbol('cart', 20, 19, 'catalog__icon') }}
+          </a>
+        </p>
       </div>
     </li>
     <li class="catalog__item">
@@ -28,7 +33,12 @@
           <h3 class="catalog__card-heading">Корзинка для белья</h3>
         </a>
         <p class="catalog__card-info">Диаметр 15 см, высота 10 см</p>
-        <p class="catalog__card-price">690 руб.{{ cartLink }}</p>
+        <p class="catalog__card-price">
+          690 руб.
+          <a class="catalog__popup-link" href="#!" aria-label="Корзинка для белья, добавить в список покупок">
+            {{ symbol('cart', 20, 19, 'catalog__icon') }}
+          </a>
+        </p>
       </div>
     </li>
     <li class="catalog__item">
@@ -40,7 +50,12 @@
           <h3 class="catalog__card-heading">Большая корзинка для&nbsp;игрушек</h3>
         </a>
         <p class="catalog__card-info">Диаметр 30 см, высота 30 см</p>
-        <p class="catalog__card-price">1 500 руб.{{ cartLink }}</p>
+        <p class="catalog__card-price">
+          1 500 руб.
+          <a class="catalog__popup-link" href="#!" aria-label="Большая корзинка, добавить в список покупок">
+            {{ symbol('cart', 20, 19, 'catalog__icon') }}
+          </a>
+        </p>
     </div>
     </li>
   </ul>
