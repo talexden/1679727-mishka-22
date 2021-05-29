@@ -8,7 +8,7 @@
 {% macro picture(name = '', ext = '', class = '', alt = '') %}
   {% set pathPrefix = root ~ 'img/' ~ name %}
 
-  <picture>
+  <picture class="img {{ class }}-wrapper">
     {% if ext == 'svg' %}
       <source media="(min-width: 1150px)" srcset="{{ pathPrefix }}-desktop.{{ ext }}">
       <source media="(min-width: 768px)" srcset="{{ pathPrefix }}-tablet.{{ ext }}">

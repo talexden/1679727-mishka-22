@@ -4,18 +4,7 @@
   }
 }
 
-.navigation__wrapper {
-  @media @tablet {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 var(--full-width-margin);
-    background-color: @color-basic-gray;
-  }
-}
-
 .navigation__logo-wrapper {
-  margin: 0 -30px;
-  padding: 0 30px;
   border-bottom: @border-switched-grayny;
 
   @media @desktop {
@@ -24,7 +13,6 @@
 }
 
 .navigation__logo-link {
-  z-index: 1;
   display: table;
   margin: auto;
   padding: 22px;
@@ -41,8 +29,9 @@
   @media @tablet {
     position: absolute;
     top: 22px;
+    left: 48px;
+    margin: 0;
     padding: 0;
-    border-bottom: none;
   }
 
   @media @desktop {
@@ -54,25 +43,6 @@
 
 .navigation__logo-image {
   display: block;
-}
-
-.navigation__text {
-  display: none;
-
-  @media @tablet {
-    position: absolute;
-    right: 0;
-    bottom: 9px;
-    display: block;
-    font-size: 15px;
-    line-height: 24px;
-    color: @color-native-black;
-  }
-
-  @media @desktop {
-    position: static;
-    margin: 20px 50px 0 auto;
-  }
 }
 
 .navigation__toggle {
@@ -108,7 +78,7 @@
   }
 
   .navigation--opened {
-    .navigation__wrapper {
+    .navigation__list-wrapper {
       display: block;
     }
   }
@@ -127,8 +97,191 @@
       }
     }
 
-    .navigation__wrapper {
+    .navigation__list-wrapper {
       display: none;
     }
+  }
+}
+
+.navigation__list-wrapper {
+  @media @tablet {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.navigation__list {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-weight: 700;
+  font-size: 17px;
+  line-height: 24px;
+
+  @media @tablet {
+    display: flex;
+    padding: 0 50px;
+  }
+}
+
+
+.navigation__list-first {
+  @media @tablet {
+    padding: 0 14px 0 50px;
+    font-size: 15px;
+    line-height: 24px;
+    background-color: @color-basic-gray;
+  }
+
+  @media @desktop {
+    width: 500px;
+    font-size: 17px;
+    background-color: @color-white;
+    border-bottom: @border-opacity-black;
+  }
+}
+
+.navigation__list-second {
+  @media @tablet {
+    order: -1;
+    width: 100%;
+    padding: 0 50px 0 14px;
+    border-bottom: @border-opacity-black;
+
+    &::before { // защита логотипа
+      content: "";
+      display: block;
+      width: 215px;
+      margin-right: auto;
+    }
+  }
+
+  @media @desktop {
+    order: initial;
+    width: 650px;
+  }
+}
+
+.navigation__list-third {
+  display: none;
+
+  @media @desktop {
+    display: flex;
+    padding: 0 14px 0 50px;
+    font-size: 15px;
+    line-height: 24px;
+    background-color: @color-basic-gray;
+  }
+}
+
+.navigation__item {
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: @border-switched-grayny;
+
+  @media @tablet {
+    display: flex;
+    border: none;
+  }
+
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+.navigation__item-first {
+  @media @tablet {
+    padding: 20px 37px 20px 0;
+  }
+
+  @media @desktop {
+    padding: 32px 36px;
+
+    &:first-child {
+      border-right: @border-opacity-black;
+    }
+  }
+}
+
+.navigation__item-second {
+  @media @tablet {
+    padding: 0;
+
+    &--search {
+      display: block;
+      width: 83px;
+      border-left: @border-opacity-black;
+    }
+
+    &--cart {
+      display: block;
+      padding: 32px 0 32px 83px;
+      border-left: @border-opacity-black;
+    }
+  }
+}
+
+.navigation__item-third {
+  @media @desktop {
+    padding: 20px 31px;
+  }
+}
+
+.navigation__link {
+  display: block;
+  padding: 28px 40px 26px 76px;
+
+  &:hover,
+  &:focus {
+    opacity: 60%;
+
+    .navigation__icon {
+      color: @color-green;
+      opacity: 100%;
+    }
+  }
+
+  &:active {
+    opacity: 30%;
+  }
+
+  @media @tablet {
+    padding: 0;
+  }
+}
+
+.navigation__icon {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  opacity: 20%;
+
+  &--search {
+    transform: translate(2px, -50%); // PP
+  }
+}
+
+.navigation__item-text {
+  @media @tablet {
+    &--search {
+      display: none;
+    }
+  }
+}
+
+.navigation__text {
+  display: none;
+
+  @media @tablet {
+    display: block;
+    flex-grow: 1;
+    margin: 0;
+    padding: 20px 50px;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: right;
+    background-color: @color-basic-gray;
   }
 }

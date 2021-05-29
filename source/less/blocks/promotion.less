@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   min-width: 260px;
-  padding: 30px 0;
+  padding: 31px 0;
 
   &::after {
     content: "";
@@ -44,7 +44,7 @@
 }
 
 .promotion__heading {
-  margin: 0 0 17px;
+  margin: 0 0 16px;
   font-weight: 700;
   font-size: 17px;
   line-height: 20px;
@@ -129,13 +129,16 @@
 }
 
 .promotion__image {
-  margin: 0 0 17px;
+  display: block;
+  width: 100%;
+  margin: 0 0 26px;
   background-color: @color-basic-gray;
 
   @media @tablet {
     position: absolute;
     top: 140px;
     right: 0;
+    width: auto;
   }
 
   @media @desktop {
@@ -144,7 +147,7 @@
 }
 
 .promotion__cost {
-  margin: 0 0 25px;
+  margin: 0 0 24px;
   font-weight: 700;
   font-size: 17px;
   line-height: 24px;
@@ -161,7 +164,7 @@
 }
 
 .promotion__button {
-  margin-bottom: 10px;
+  margin-bottom: 9px;
 
   @media @desktop {
     max-width: 290px;
