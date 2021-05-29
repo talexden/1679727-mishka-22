@@ -170,7 +170,7 @@ const watcher = () => {
   gulp.watch("source/twig/**/*.twig", gulp.series(htmlTasks, reload));
   gulp.watch("source/less/**/*.less", gulp.series(stylesTasks, reload));
   gulp.watch("source/img/icons/**/*.svg", gulp.series(gulp.parallel(styles, spriteBuild), reload));
-  gulp.watch("source/js/**/*.js", gulp.series("script:lint", testerJs, reload));
+  gulp.watch("source/js/**/*.js", gulp.series(testerJs, reload));
 };
 
 
@@ -182,13 +182,13 @@ const testerJs = () => {
     .pipe(gulp.dest("build/js"));
 };
 
-gulp.task("script:lint", function () {
-  return gulp.src("source/js/**/*.js")
-    .pipe(editorconfig({
-      editorconfig: ".editorconfig"
-    }))
-    .pipe(editorconfig.reporter());
-});
+// gulp.task("script:lint", function () {
+//   return gulp.src("source/js/**/*.js")
+//     .pipe(editorconfig({
+//       editorconfig: ".editorconfig"
+//     }))
+//     .pipe(editorconfig.reporter());
+// });
 
 
 // Очищаем папку

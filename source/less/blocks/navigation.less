@@ -91,7 +91,7 @@
         left: 1px;
         width: 20px;
         height: 2px;
-        background-color: @color-dark-brown;
+        // background-color: @color-dark-brown;
         background-image: none;
         box-shadow: 0 6px 0 @color-dark-brown, 0 12px 0 @color-dark-brown;
       }
@@ -131,14 +131,11 @@
     padding: 0 14px 0 50px;
     font-size: 15px;
     line-height: 24px;
-    background-color: @color-basic-gray;
   }
 
   @media @desktop {
     width: 500px;
     font-size: 17px;
-    background-color: @color-white;
-    border-bottom: @border-opacity-black;
   }
 }
 
@@ -147,7 +144,6 @@
     order: -1;
     width: 100%;
     padding: 0 50px 0 14px;
-    border-bottom: @border-opacity-black;
 
     &::before { // защита логотипа
       content: "";
@@ -171,7 +167,6 @@
     padding: 0 14px 0 50px;
     font-size: 15px;
     line-height: 24px;
-    background-color: @color-basic-gray;
   }
 }
 
@@ -272,6 +267,7 @@
 }
 
 .navigation__text {
+  position: relative;
   display: none;
 
   @media @tablet {
@@ -282,6 +278,19 @@
     font-size: 15px;
     line-height: 24px;
     text-align: right;
-    background-color: @color-basic-gray;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      display: block;
+      width: 200vw;
+      height: 100%;
+      margin: 0 -100vw;
+      background-color: @color-basic-gray;
+      border-top: @border-opacity-black;
+    }
   }
 }
