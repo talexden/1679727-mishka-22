@@ -20,22 +20,17 @@ navToggle.addEventListener('click', function() {
 });
 
 if (modalClick) {
-    for (var i = 0; i < modalClick.length; i = i + 1) {
-    modalClick[i].addEventListener("click", function(evt) {
+  for (let i = 0; i < modalClick.length; i++) {
+    modalClick[i].addEventListener("click", function (evt) {
       evt.preventDefault();
       modalWindow.classList.add("popup-form--reveal");
-      //modalWindow.focus();
     });
   }
-};
 
-window.addEventListener("keydown", function(evt) {
-  if (evt.keyCode === 27) {
-    evt.preventDefault();
-    if (modalClick) {
-      if (modalWindow.classList.contains("popup-form--reveal")) {
-        modalWindow.classList.remove("popup-form--reveal");
-      }
+  window.addEventListener("keydown", function (evt) {
+    if (evt.keyCode === 27) {
+      evt.preventDefault();
+      modalWindow.classList.remove("popup-form--reveal");
     }
-  }
-});
+  });
+};
