@@ -43,6 +43,9 @@ img {
   max-width: 100%;
   height: auto;
 }
+.page {
+  overflow-x: hidden;
+}
 .page svg {
   fill: currentColor;
 }
@@ -73,6 +76,7 @@ img {
 .button {
   display: block;
   box-sizing: border-box;
+  margin: 0;
   padding: 14px;
   font-weight: 700;
   font-size: 18px;
@@ -132,7 +136,7 @@ img {
 @media (min-width: 768px) {
   .catalog {
     margin: 0;
-    padding: 66px 0 53px;
+    padding: 67px 0 53px;
   }
 }
 @media (min-width: 1150px) {
@@ -723,7 +727,7 @@ img {
 }
 @media (min-width: 1150px) {
   .form {
-    padding: 99px 0 23px;
+    padding: 100px 0 23px;
   }
 }
 .form__text {
@@ -778,7 +782,7 @@ img {
 }
 @media (min-width: 768px) {
   .form__set--radio {
-    padding: 50px 0 24px 170px;
+    padding: 52px 0 24px 170px;
   }
 }
 @media (min-width: 1150px) {
@@ -791,7 +795,7 @@ img {
 }
 @media (min-width: 768px) {
   .form__set--checkbox {
-    padding: 49px 20px 49px 166px;
+    padding: 49px 0 49px 166px;
   }
 }
 @media (min-width: 1150px) {
@@ -830,7 +834,7 @@ img {
 }
 @media (min-width: 768px) {
   .form__set--textarea {
-    padding: 51px 0 23px 167px;
+    padding: 50px 0 22px 167px;
   }
 }
 @media (min-width: 1150px) {
@@ -909,8 +913,8 @@ img {
   .form__list--checkbox {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    -moz-column-gap: 42px;
-         column-gap: 42px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
     row-gap: 22px;
   }
 }
@@ -1157,20 +1161,37 @@ img {
   border: 2px solid #444444;
 }
 @media (min-width: 768px) {
-  .form__group:nth-child(odd) {
-    margin: 0 var(--full-width-margin);
-    padding-right: 50px;
-    padding-left: 50px;
-    background-color: #f1f1f1;
-  }
-  .form__group:last-child {
-    background-color: #ffffff;
-  }
-}
-@media (min-width: 768px) {
   .form__group--contacts {
     padding-top: 38px;
     padding-bottom: 38px;
+  }
+}
+@media (min-width: 768px) {
+  .form__group {
+    position: relative;
+  }
+  .form__group:nth-child(odd)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    margin: 0 -50px;
+    background-color: #f1f1f1;
+  }
+  .form__group:last-child {
+    background: none;
+  }
+  .form__group:last-child::before {
+    background: none;
+  }
+}
+@media (min-width: 1150px) {
+  .form__group:nth-child(odd)::before {
+    margin: 0 var(--full-width-margin);
   }
 }
 @media (min-width: 768px) {
@@ -1178,11 +1199,6 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    padding: 31px 50px;
-  }
-}
-@media (min-width: 768px) {
-  .form__button-wrapper {
     padding: 31px 0;
   }
 }
