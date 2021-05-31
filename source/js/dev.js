@@ -2,7 +2,7 @@ const Breakpoints = {
   TABLET: 768,
   DESKTOP: 1150
 };
-const dafaultOfsets = {
+const defaultOffsets = {
   mobile: [0, 0],
   tablet: [0, 0],
   desktop: [0, 0]
